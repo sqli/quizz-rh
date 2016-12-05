@@ -1,19 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+
+var injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
+
+import Main from './Main';
+import Footer from './Footer';
+
 import './App.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {open: false};
+  }
+
+  handleToggle(){
+    this.setState({open: !this.state.open});
+  }
+
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <MuiThemeProvider>
+          <div>
+            <AppBar
+                title="RH Quizz"
+                iconClassNameRight="muidocs-icon-navigation-expand-more"
+                onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+                />
+            <Drawer open={this.state.open} openSecondary={true}>
+              <MenuItem>Menu Item</MenuItem>
+              <MenuItem>Menu Item</MenuItem>
+            </Drawer>
+            <Main/>
+            <Footer/>
+          </div>
+        </MuiThemeProvider>
     );
   }
 }

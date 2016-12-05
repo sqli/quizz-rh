@@ -1,4 +1,4 @@
-# GL Pages Manager
+# RH Quizz
 
 ## Site
 - [demo](http://rh-quizz.comite-technique.static.toulouse.sqli.com/)

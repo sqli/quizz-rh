@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
+//import App from './App';
+import AppStub from './AppStub';
+
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+    <AppStub/>,
   document.getElementById('root')
 );

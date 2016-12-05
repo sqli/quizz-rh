@@ -1,0 +1,6 @@
+.Main{
+    min-height: calc(100% - 140px);
+    width: calc(100% - 40px);
+    margin: 20px;
+    padding: 20px;
+}
