@@ -1,0 +1,26 @@
+.Result{
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+    .Result{
+        width: calc(100% - 40px);
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    .Result{
+        width: calc(50% - 40px);
+    }
+}
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+    .Result{
+        width: calc(33.33333333333% - 40px);
+    }
+}
+@media screen and (min-width: 1101px) {
+    .Result{
+        width: calc(25% - 40px);
+    }
+}
