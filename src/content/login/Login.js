@@ -6,6 +6,8 @@ import ActionDone from 'material-ui/svg-icons/action/done';
 
 import './Login.css';
 
+const minLengthUserName = 6;
+
 class Login extends Component {
 
     constructor(props) {
@@ -32,23 +34,23 @@ class Login extends Component {
     }
 
     isValid(value){
-        return value.length > 10;
+        return value.length > minLengthUserName;
     }
 
     render() {
         return (
-            <form onSubmit={this.submit}>
+            <form className="Login" onSubmit={this.submit}>
                 <TextField
                     value={this.state.login}
                     onChange={this.handleChange}
-                    floatingLabelText="Entrez votre nom prenom"
+                    floatingLabelText="Entrez votre nom prénom"
                     fullWidth={true}
-                    errorText={!this.isValid(this.state.login) && this.state.login.length > 0 && "Il faut au moins 10 lettres pour votre nom et prenom"}
+                    errorText={!this.isValid(this.state.login) && this.state.login.length > 0 && 'Il faut au moins ' + minLengthUserName + ' lettres pour votre nom et prénom'}
                     />
                 <br/>
                 <RaisedButton
                     type="submit"
-                    label="Start quizz"
+                    label="Démarrer le quizz"
                     secondary={true}
                     fullWidth={true}
                     disabled={!this.isValid(this.state.login)}

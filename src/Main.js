@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
-import Paper from 'material-ui/Paper';
-
 import Login from './content/login/Login';
 import Themes from './content/theme/Themes';
-import Question from './content/question/Question';
+import Questions from './content/question/Questions';
+import Results from './content/result/Results';
 
 import './Main.css';
 
@@ -13,7 +12,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
 
-        this._state = 'themes';
+        this._state = 'login';
     }
 
     isState(state){
@@ -22,11 +21,12 @@ class Main extends Component {
 
   render() {
     return (
-        <Paper className="Main" zDepth={1}>
+        <main className="Main">
             {this.isState('login') &&  <Login/>}
             {this.isState('themes') &&  <Themes/>}
-            {this.isState('question') &&  <Question/>}
-        </Paper>
+            {this.isState('questions') &&  <Questions/>}
+            {this.isState('results') &&  <Results/>}
+        </main>
     );
   }
 }

@@ -21,7 +21,6 @@ class Themes extends Component {
     }
 
     render() {
-
         return (
             <ul>
                 {this.state.themes.map(theme =>

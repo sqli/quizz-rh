@@ -35,8 +35,7 @@ class App extends Component {
                 onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
                 />
             <Drawer open={this.state.open} openSecondary={true}>
-              <MenuItem>Menu Item</MenuItem>
-              <MenuItem>Menu Item</MenuItem>
+              <MenuItem>A propos</MenuItem>
             </Drawer>
             <Main/>
             <Footer/>
