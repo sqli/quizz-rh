@@ -6,6 +6,9 @@ import FlatButton from 'material-ui/FlatButton';
 import IconAddShoppingCart from 'material-ui/svg-icons/action/add-shopping-cart';
 import IconDeleteForever from 'material-ui/svg-icons/action/delete-forever';
 
+import themeService from '../../resource/theme';
+
+
 import './Theme.css';
 
 class Theme extends Component {
@@ -22,42 +25,50 @@ class Theme extends Component {
     }
 
     handleRemove = () => {
+        themeService.removeThemeFromBasket(this.theme);
         this.setState({
             snackbar: {
                 open: true,
-                message: 'Le questionnaire ' + this.theme.name + ' a ete enleve'
+                message: 'Le questionnaire ' + this.theme.name + ' a été enlevé'
             }
         });
     };
 
     handleAdd = () => {
+        themeService.addThemeIntoBasket(this.theme);
         this.setState({
             snackbar: {
                 open: true,
-                message: 'Ce questionnaire ' + this.theme.name + ' a ete ajoute'
+                message: 'Le questionnaire ' + this.theme.name + ' a été ajouté'
             }
         });
     };
 
     render() {
         return (
-            <Card className="Theme">
+            <Card className="Theme" style={{backgroundColor: themeService.themeIsIntoBasket(this.theme) ? 'lightBlue': 'white'}}>
                 <CardHeader
                     title={this.theme.name}
                     subtitle={this.theme.questions.length + ' Questions'}
                     avatar={this.theme.logo}
                     />
                 <CardActions>
-                    <FlatButton
-                        label="Enlever"
-                        secondary={true}
-                        onTouchTap={this.handleRemove}
-                        icon={<IconDeleteForever />}/>
-                    <FlatButton
-                        label="Ajouter"
-                        primary={true}
-                        onTouchTap={this.handleAdd}
-                        icon={<IconAddShoppingCart />}/>
+                    {
+                        themeService.themeIsIntoBasket(this.theme)   &&
+                        <FlatButton
+                            label="Enlever"
+                            secondary={true}
+                            onTouchTap={this.handleRemove}
+                            icon={<IconDeleteForever />}/>
+                    }
+                    {
+                        !themeService.themeIsIntoBasket(this.theme) &&
+                        <FlatButton
+                            label="Ajouter"
+                            primary={true}
+                            onTouchTap={this.handleAdd}
+                            icon={<IconAddShoppingCart />}/>
+                    }
                 </CardActions>
                 <Snackbar
                     open={this.state.snackbar.open}

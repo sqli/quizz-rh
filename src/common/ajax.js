@@ -16,7 +16,7 @@ class Ajax {
                 if (req.readyState === 4) {
                     if(req.status === 200){
                         try{
-                            var response = req.responseText && JSON.parse(req.responseText)
+                            var response = req.responseText && JSON.parse(req.responseText);
                             resolve(response);
                         }
                         catch(err){

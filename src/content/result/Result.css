@@ -24,3 +24,8 @@
         width: calc(25% - 40px);
     }
 }
+
+.Result svg{
+    height: 150px !important;
+    width: 150px !important;
+}

@@ -1,4 +1,22 @@
 .Questions{
     width: calc(100% - 200px);
     display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
+.Questions-stepper{
+    width: 200px;
+    display: inline-block;
+}
+@media screen and (max-width: 600px) {
+    .Questions-stepper{
+        width: 100px;
+    }
+    .Questions{
+        width: calc(100% - 120px);
+        display: inline-block;
+    }
+    .Questions-chip{
+        display: none !important;
+    }
 }

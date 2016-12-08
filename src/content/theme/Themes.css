@@ -1,0 +1,15 @@
+.Themes{
+    margin: 0px;
+    padding: 0px;
+}
+
+.themes-badge{
+    display: inline;
+}
+
+
+.themes-paragraphe{
+    margin: 20px 20px 20px 20px;
+    width: calc(100% - 100px);
+    display: inline-block;
+}

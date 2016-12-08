@@ -11,9 +11,28 @@ class Question extends Component {
 
     constructor(props){
         super();
+        console.log(props.params.id);
         this.state = {
             completed: 20,
-            question: props.value
+            question:{
+                "theme": {
+                    "id": 1,
+                    "name": "HTML",
+                    "logo": "http://blog.netapsys.fr/wp-content/uploads/2011/05/HTML5_Logo_2562.png"
+                },
+                "title": "Quelle est l'erreur dans le code suivant",
+                "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+                "responses": [{
+                    "title": "il faut numéroter chaque objet de la liste"
+                },{
+                    "title": "il n'y a pas d'erreur"
+                },{
+                    "title": "la balise <ul> n'a pas besoin d'être fermée"
+                },{
+                    "title": "la balise <il> n'existe pas",
+                    "isTrue": true
+                }]
+            }
         };
     }
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { browserHistory } from 'react-router';
+
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import ActionDone from 'material-ui/svg-icons/action/done';
@@ -24,7 +26,8 @@ class Login extends Component {
 
     submit(event){
         event.preventDefault();
-        console.log(this.state.login)
+        console.log(this.state.login);
+        browserHistory.push('/themes');
     }
 
     handleChange(event){
@@ -43,14 +46,14 @@ class Login extends Component {
                 <TextField
                     value={this.state.login}
                     onChange={this.handleChange}
-                    floatingLabelText="Entrez votre nom prénom"
+                    floatingLabelText="Entrez votre nom prÃ©nom"
                     fullWidth={true}
-                    errorText={!this.isValid(this.state.login) && this.state.login.length > 0 && 'Il faut au moins ' + minLengthUserName + ' lettres pour votre nom et prénom'}
+                    errorText={!this.isValid(this.state.login) && this.state.login.length > 0 && 'Il faut au moins ' + minLengthUserName + ' lettres pour votre nom et prÃ©nom'}
                     />
                 <br/>
                 <RaisedButton
                     type="submit"
-                    label="Démarrer le quizz"
+                    label="DÃ©marrer le quizz"
                     secondary={true}
                     fullWidth={true}
                     disabled={!this.isValid(this.state.login)}
