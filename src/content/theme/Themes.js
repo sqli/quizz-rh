@@ -17,8 +17,11 @@ class Themes extends Component {
 
     constructor(){
         super();
+        this.handleThemeChange = this.handleThemeChange.bind(this);
         this.state = {
-            themes: []
+            themes: [],
+            nbQuestionsIntoBasket: themeService.nbQuestionsIntoBasket(),
+            isEnoughToStart: themeService.isEnoughToStart()
         };
     }
 
@@ -32,15 +35,22 @@ class Themes extends Component {
         browserHistory.push('/question/1');
     }
 
+    handleThemeChange(){
+        this.setState({
+            nbQuestionsIntoBasket: themeService.nbQuestionsIntoBasket(),
+            isEnoughToStart: themeService.isEnoughToStart()
+        });
+    }
+
     render() {
         return (
             <div>
                 <div className="content-with-paper">
                     <div>
                         <Badge className="themes-badge"
-                            badgeContent={themeService.nbQuestionsIntoBasket()}
-                            primary={themeService.isEnoughToStart()}
-                            secondary={!themeService.isEnoughToStart()}
+                            badgeContent={this.state.nbQuestionsIntoBasket}
+                            primary={this.state.isEnoughToStart}
+                            secondary={!this.state.isEnoughToStart}
                             >
                             <NotificationsIcon />
                         </Badge>
@@ -50,14 +60,14 @@ class Themes extends Component {
                         </div>
                     <ul className="Themes">
                         {this.state.themes.map(theme =>
-                                <Theme key={theme.id} value={theme}/>
+                                <Theme key={theme.id} value={theme} onChange={this.handleThemeChange}/>
                         )}
                     </ul>
                 </div>
                 <Paper zDepth={1}>
-                    <BottomNavigation selectedIndex={themeService.isEnoughToStart() ? 0 : 1}>
+                    <BottomNavigation selectedIndex={this.state.isEnoughToStart ? 0 : 1}>
                         <BottomNavigationItem
-                            disabled={!themeService.isEnoughToStart()}
+                            disabled={!this.state.isEnoughToStart}
                             label="Demarrer"
                             icon={<IconStart />}
                             onTouchTap={() => this.start()}

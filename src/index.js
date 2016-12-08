@@ -16,7 +16,7 @@ import './index.css';
 
 ReactDOM.render(
     <Router history={browserHistory}>
-        <Route path="/" component={AppStub}>
+        <Route component={AppStub}>
             <Route path="login" component={Login}/>
             <Route path="themes" component={Themes}/>
             <Route path="question" component={Questions}>

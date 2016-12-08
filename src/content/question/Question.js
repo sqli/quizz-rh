@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
 
+import { browserHistory } from 'react-router';
+
 var Highlight = require('react-highlight');
 import {Card, CardText, CardMedia, CardHeader} from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
 
-import './Question.css';
+import themeService from '../../resource/theme';
+
 import '../../../node_modules/highlight.js/styles/arduino-light.css';
+import './Question.css';
 
 class Question extends Component {
 
     constructor(props){
         super();
-        console.log(props.params.id);
+        this.index = props.params.id - 1;
         this.state = {
             completed: 20,
-            question:{
-                "theme": {
-                    "id": 1,
-                    "name": "HTML",
-                    "logo": "http://blog.netapsys.fr/wp-content/uploads/2011/05/HTML5_Logo_2562.png"
-                },
-                "title": "Quelle est l'erreur dans le code suivant",
-                "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
-                "responses": [{
-                    "title": "il faut numéroter chaque objet de la liste"
-                },{
-                    "title": "il n'y a pas d'erreur"
-                },{
-                    "title": "la balise <ul> n'a pas besoin d'être fermée"
-                },{
-                    "title": "la balise <il> n'existe pas",
-                    "isTrue": true
-                }]
-            }
+            question: null
         };
+    }
+
+    componentWillMount(){
+        const questions = themeService.getSelectedQuestions();
+        if(questions.length === 0){
+            browserHistory.push('/themes');
+        }else{
+            this.setState({
+                question: questions[this.index]
+            });
+        }
     }
 
     isCorrect(){
@@ -41,7 +38,7 @@ class Question extends Component {
     }
 
     render() {
-        return (
+        return this.state.question && (
             <Card className="Question">
                 <CardHeader
                     title={this.state.question.theme.name}

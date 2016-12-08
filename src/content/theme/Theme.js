@@ -16,6 +16,7 @@ class Theme extends Component {
     constructor(props){
         super(props);
         this.theme = props.value;
+        this.notifyChange = props.onChange;
         this.state = {
             snackbar: {
                 open: false,
@@ -26,6 +27,7 @@ class Theme extends Component {
 
     handleRemove = () => {
         themeService.removeThemeFromBasket(this.theme);
+        this.notifyChange();
         this.setState({
             snackbar: {
                 open: true,
@@ -36,6 +38,7 @@ class Theme extends Component {
 
     handleAdd = () => {
         themeService.addThemeIntoBasket(this.theme);
+        this.notifyChange();
         this.setState({
             snackbar: {
                 open: true,
@@ -73,7 +76,7 @@ class Theme extends Component {
                 <Snackbar
                     open={this.state.snackbar.open}
                     message={this.state.snackbar.message}
-                    autoHideDuration={4000}
+                    autoHideDuration={2000}
                     onRequestClose={this.handleRequestClose}
                     />
             </Card>

@@ -35,6 +35,25 @@ class Theme extends Resource {
         return nbQuestionsMinToStart;
     }
 
+    getSelectedQuestions(){
+        var questions = [];
+        this.basket.forEach(function(theme){
+            theme.questions.forEach(function(question){
+                questions.push({
+                    theme: {
+                        id: theme.id,
+                        name: theme.name,
+                        logo: theme.logo
+                    },
+                    title: question.title,
+                    code: question.code,
+                    responses: question.responses
+                });
+            });
+        });
+        return questions;
+    }
+
 }
 
 export default new Theme('/themes');
