@@ -12,7 +12,7 @@ import IconCheck from '../../../node_modules/material-ui/svg-icons/navigation/ch
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 
-import ThemeService from '../theme/ThemeService';
+import QuestionService from './QuestionService';
 
 import './Questions.css';
 
@@ -20,8 +20,7 @@ class Questions extends Component {
 
     constructor(props) {
         super(props);
-        const questions = ThemeService.getSelectedQuestions();
-        console.log(questions[Math.floor(Math.random()*questions.length)]);
+        const questions = QuestionService.getQuestions();
         this.state = {
             stepIndex: parseInt(props.params.id, 0),
             completed: questions.length,
@@ -109,9 +108,6 @@ class Questions extends Component {
             </div>
         );
     }
-//{this.props.children && React.cloneElement(this.props.children, {
-//    setQuestionResponses: this.setQuestionResponses
-//})}
 }
 
 export default Questions;

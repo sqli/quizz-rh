@@ -45,14 +45,16 @@ class ThemeService {
                         id: theme.id,
                         name: theme.name,
                         logo: theme.logo,
-                        level: theme.level
+
                     },
+                    level: question.level,
                     title: question.title,
                     code: question.code,
                     responses: question.responses
                 });
             });
         });
+        this.basket = [];
         return questions;
     }
 

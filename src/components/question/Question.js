@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-
 import { browserHistory } from 'react-router';
 
 var Highlight = require('react-highlight');
+import '../../../node_modules/react-highlight/node_modules/highlight.js/styles/arduino-light.css';
+
 import {Card, CardText, CardMedia, CardHeader} from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
 
-import ThemeService from '../../content/theme/ThemeService';
+import QuestionService from '../../content/question/QuestionService';
 
-import '../../../node_modules/react-highlight/node_modules/highlight.js/styles/arduino-light.css';
 import './Question.css';
 
 class Question extends Component {
@@ -22,25 +22,22 @@ class Question extends Component {
     }
 
     componentDidMount(){
-        const questions = ThemeService.getSelectedQuestions();
-        if(questions.length === 0){
+        const question = QuestionService.findQuestionByIndex(this.props.params.id-1);
+        if(!question){
             browserHistory.push('/themes');
         }else{
             this.setState({
-                question: questions[this.props.params.id - 1]
+                question: question
             });
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        const questions = ThemeService.getSelectedQuestions();
+        this.index = nextProps.params.id -1;
+        const question = QuestionService.findQuestionByIndex(this.index);
         this.setState({
-            question: questions[nextProps.params.id - 1]
+            question: question
         });
-    }
-
-    componentWillUnmount() {
-        console.log('componentWillUnmount');
     }
 
 
@@ -56,7 +53,7 @@ class Question extends Component {
         return this.state.question && (
                 <Card className="Question">
                     <CardHeader
-                        title={this.state.question.theme.name + ' - Niveau: ' + this.state.question.theme.level}
+                        title={this.state.question.theme.name}
                         subtitle={'Question '+ this.state.question.id + ' - ' + this.state.question.title + ' :'}
                         avatar={this.state.question.theme.logo}
                     />
