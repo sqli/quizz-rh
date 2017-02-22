@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import Snackbar from 'material-ui/Snackbar';
 import {Card, CardActions, CardHeader, CardTitle} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-import IconAddShoppingCart from 'material-ui/svg-icons/action/add-shopping-cart';
-import IconDeleteForever from 'material-ui/svg-icons/action/delete-forever';
+import IconAddShoppingCart from '../../../node_modules/material-ui/svg-icons/action/add-shopping-cart';
+import IconDeleteForever from '../../../node_modules/material-ui/svg-icons/action/delete-forever';
 
-import ThemeService from './ThemeService';
+import ThemeService from './../../content/theme/ThemeService';
 
 import './Theme.css';
 

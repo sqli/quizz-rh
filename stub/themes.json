@@ -223,6 +223,7 @@
     "questions": [
       {
         "id": 1,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -243,6 +244,7 @@
       },
       {
         "id": 2,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -263,6 +265,7 @@
       },
       {
         "id": 3,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -283,6 +286,7 @@
       },
       {
         "id": 4,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -303,6 +307,7 @@
       },
       {
         "id": 5,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -323,6 +328,7 @@
       },
       {
         "id": 6,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -343,6 +349,7 @@
       },
       {
         "id": 7,
+        "level": "Intermédiaire",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -363,6 +370,7 @@
       },
       {
         "id": 8,
+        "level": "Intermédiaire",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -383,6 +391,7 @@
       },
       {
         "id": 9,
+        "level": "Expert",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -403,6 +412,7 @@
       },
       {
         "id": 10,
+        "level": "Expert",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -430,6 +440,7 @@
     "questions": [
       {
         "id": 1,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -450,6 +461,7 @@
       },
       {
         "id": 2,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -470,6 +482,7 @@
       },
       {
         "id": 3,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -490,6 +503,7 @@
       },
       {
         "id": 4,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -510,6 +524,7 @@
       },
       {
         "id": 5,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -530,6 +545,7 @@
       },
       {
         "id": 6,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -550,6 +566,7 @@
       },
       {
         "id": 7,
+        "level": "Intermédiaire",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -570,6 +587,7 @@
       },
       {
         "id": 8,
+        "level": "Intermédiaire",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -590,6 +608,7 @@
       },
       {
         "id": 9,
+        "level": "Expert",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -610,6 +629,7 @@
       },
       {
         "id": 10,
+        "level": "Expert",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -634,18 +654,651 @@
     "id": 4,
     "name": "Drupal",
     "logo": "http://logosvector.net/wp-content/uploads/2011/05/drupal-logo-vector.png",
-    "questions": []
+    "questions": [
+      {
+        "id": 1,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "level": "Intermédiaire",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "level": "Intermédiaire",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "level": "Expert",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "level": "Expert",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 5,
     "name": "Java",
     "logo": "http://logodatabases.com/wp-content/uploads/2012/03/java-logo-large.png",
-    "questions": []
+    "questions": [
+      {
+        "id": 1,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "level": "Intermédiaire",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "level": "Intermédiaire",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "level": "Expert",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "level": "Expert",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 6,
     "name": "PHP",
     "logo": "https://blog.seboss666.info/wp-content/uploads/2014/11/fpmphp-logo.png",
-    "questions": []
+    "questions": [
+      {
+        "id": 1,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "level": "Débutant",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "level": "Intermédiaire",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "level": "Intermédiaire",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "level": "Expert",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "level": "Expert",
+        "title": "Quelle est l'erreur dans le code suivant",
+        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "responses": [
+          {
+            "title": "il faut numéroter chaque objet de la liste"
+          },
+          {
+            "title": "il ny a pas d'erreur"
+          },
+          {
+            "title": "la balise <ul> n'a pas besoin d'être fermée"
+          },
+          {
+            "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -9,7 +9,7 @@ import AppStub from './AppStub';
 import Login from './content/login/Login';
 import Themes from './content/theme/Themes';
 import Questions from './content/question/Questions';
-import Question from './content/question/Question';
+import Question from './components/question/Question';
 import Results from './content/result/Results';
 
 import './index.css';

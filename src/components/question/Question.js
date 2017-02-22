@@ -6,7 +6,7 @@ var Highlight = require('react-highlight');
 import {Card, CardText, CardMedia, CardHeader} from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
 
-import ThemeService from '../theme/ThemeService';
+import ThemeService from '../../content/theme/ThemeService';
 
 import '../../../node_modules/react-highlight/node_modules/highlight.js/styles/arduino-light.css';
 import './Question.css';

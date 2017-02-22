@@ -8,7 +8,7 @@ import IconStart from 'material-ui/svg-icons/av/play-arrow';
 import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 
-import Theme from './Theme';
+import Theme from './../../components/theme/Theme';
 import ThemeService from './ThemeService';
 
 import './Themes.css';
