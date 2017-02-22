@@ -9,24 +9,24 @@ import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 
 import Theme from './Theme';
-import themeService from '../../resource/theme';
+import ThemeService from './ThemeService';
 
 import './Themes.css';
 
 class Themes extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.handleThemeChange = this.handleThemeChange.bind(this);
         this.state = {
             themes: [],
-            nbQuestionsIntoBasket: themeService.nbQuestionsIntoBasket(),
-            isEnoughToStart: themeService.isEnoughToStart()
+            nbQuestionsIntoBasket: ThemeService.nbQuestionsIntoBasket(),
+            isEnoughToStart: ThemeService.isEnoughToStart()
         };
     }
 
     componentDidMount(){
-        themeService.query().then(function(themes){
+        ThemeService.query().then(function(themes){
             this.setState({themes: themes});
         }.bind(this));
     }
@@ -37,8 +37,8 @@ class Themes extends Component {
 
     handleThemeChange(){
         this.setState({
-            nbQuestionsIntoBasket: themeService.nbQuestionsIntoBasket(),
-            isEnoughToStart: themeService.isEnoughToStart()
+            nbQuestionsIntoBasket: ThemeService.nbQuestionsIntoBasket(),
+            isEnoughToStart: ThemeService.isEnoughToStart()
         });
     }
 
@@ -55,7 +55,7 @@ class Themes extends Component {
                             <NotificationsIcon />
                         </Badge>
                         <p className="themes-paragraphe">
-                            Vous devez sélectionner des thèmes de questions pour arriver à un minimum de <strong>{themeService.getNbQuestionsMinToStart()}</strong> questions afin de pouvoir démarrer le test.
+                            Vous devez sélectionner des thèmes de questions pour arriver à un minimum de <strong>{ThemeService.getNbQuestionsMinToStart()}</strong> questions afin de pouvoir démarrer le test.
                         </p>
                         </div>
                     <ul className="Themes">

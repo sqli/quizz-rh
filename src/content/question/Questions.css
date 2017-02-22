@@ -1,11 +1,15 @@
 .Questions{
-    width: calc(100% - 200px);
+    width: calc(100% - 23% - 200px);
     display: inline-block;
     padding: 0px;
     margin: 0px;
 }
 .Questions-stepper{
     width: 200px;
+    display: inline-block;
+}
+.Questions-nav {
+    width: 23%;
     display: inline-block;
 }
 @media screen and (max-width: 600px) {

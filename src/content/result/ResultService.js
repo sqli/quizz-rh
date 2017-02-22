@@ -1,5 +1,7 @@
 import React  from 'react';
 
+import {Result} from '../../resource/index';
+
 import IconVeryDissatisfied from 'material-ui/svg-icons/social/sentiment-very-dissatisfied';
 import IconDissatisfied from 'material-ui/svg-icons/social/sentiment-dissatisfied';
 import IconNeutral from 'material-ui/svg-icons/social/sentiment-neutral';
@@ -61,6 +63,11 @@ class ResultService {
             }
         }
         return legend;
+    }
+
+    query = () => {
+        console.log('yo');
+        return Result.query();
     }
 
 }

@@ -1,13 +1,17 @@
-import Mock from './common/mock';
 import App from './App';
+import MockAxios from './resource/mockAxios';
 
-var themes = require("./stub/themes.json");
+var themes = require("../stub/themes.json");
+var results = require("../stub/results.json");
 
 class AppStub extends App {
 
     constructor(props) {
         super(props);
-        Mock.push(new Mock('GET', '/themes', themes));
+        MockAxios.addMocks([
+            ['GET', '/themes', 200, themes,],
+            ['GET', '/results', 200, results]
+        ]);
     }
 
 }

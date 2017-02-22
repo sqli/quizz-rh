@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
 import Snackbar from 'material-ui/Snackbar';
-import {Card, CardActions, CardHeader} from 'material-ui/Card';
+import {Card, CardActions, CardHeader, CardTitle} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import IconAddShoppingCart from 'material-ui/svg-icons/action/add-shopping-cart';
 import IconDeleteForever from 'material-ui/svg-icons/action/delete-forever';
 
-import themeService from '../../resource/theme';
-
+import ThemeService from './ThemeService';
 
 import './Theme.css';
 
@@ -26,7 +25,7 @@ class Theme extends Component {
     }
 
     handleRemove = () => {
-        themeService.removeThemeFromBasket(this.theme);
+        ThemeService.removeThemeFromBasket(this.theme);
         this.notifyChange();
         this.setState({
             snackbar: {
@@ -37,7 +36,7 @@ class Theme extends Component {
     };
 
     handleAdd = () => {
-        themeService.addThemeIntoBasket(this.theme);
+        ThemeService.addThemeIntoBasket(this.theme);
         this.notifyChange();
         this.setState({
             snackbar: {
@@ -49,15 +48,15 @@ class Theme extends Component {
 
     render() {
         return (
-            <Card className="Theme" style={{backgroundColor: themeService.themeIsIntoBasket(this.theme) ? 'lightBlue': 'white'}}>
+            <Card className="Theme" style={{backgroundColor: ThemeService.themeIsIntoBasket(this.theme) ? 'lightBlue': 'white'}}>
                 <CardHeader
                     title={this.theme.name}
-                    subtitle={this.theme.questions.length + ' Questions'}
                     avatar={this.theme.logo}
                     />
+                <CardTitle title={this.theme.questions.length + ' Questions'} />
                 <CardActions>
                     {
-                        themeService.themeIsIntoBasket(this.theme)   &&
+                        ThemeService.themeIsIntoBasket(this.theme)   &&
                         <FlatButton
                             label="Enlever"
                             secondary={true}
@@ -65,7 +64,7 @@ class Theme extends Component {
                             icon={<IconDeleteForever />}/>
                     }
                     {
-                        !themeService.themeIsIntoBasket(this.theme) &&
+                        !ThemeService.themeIsIntoBasket(this.theme) &&
                         <FlatButton
                             label="Ajouter"
                             primary={true}
@@ -73,6 +72,7 @@ class Theme extends Component {
                             icon={<IconAddShoppingCart />}/>
                     }
                 </CardActions>
+
                 <Snackbar
                     open={this.state.snackbar.open}
                     message={this.state.snackbar.message}

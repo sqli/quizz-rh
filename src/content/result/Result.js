@@ -9,7 +9,7 @@ import './Result.css';
 class Result extends Component {
 
     constructor(props){
-        super();
+        super(props);
         this.result = props.value.result;
         this.theme = props.value.theme;
     }

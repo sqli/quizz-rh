@@ -6,6 +6,7 @@
     "questions": [
       {
         "id": 1,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -26,6 +27,7 @@
       },
       {
         "id": 2,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -46,6 +48,7 @@
       },
       {
         "id": 3,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -66,6 +69,7 @@
       },
       {
         "id": 4,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -86,6 +90,7 @@
       },
       {
         "id": 5,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -106,6 +111,7 @@
       },
       {
         "id": 6,
+        "level": "Débutant",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -126,6 +132,7 @@
       },
       {
         "id": 7,
+        "level": "Intermédiaire",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -146,6 +153,7 @@
       },
       {
         "id": 8,
+        "level": "Intermédiaire",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -166,6 +174,7 @@
       },
       {
         "id": 9,
+        "level": "Expert",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [
@@ -186,6 +195,7 @@
       },
       {
         "id": 10,
+        "level": "Expert",
         "title": "Quelle est l'erreur dans le code suivant",
         "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
         "responses": [

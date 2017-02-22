@@ -26,7 +26,6 @@ class Login extends Component {
 
     submit(event){
         event.preventDefault();
-        console.log(this.state.login);
         browserHistory.push('/themes');
     }
 
