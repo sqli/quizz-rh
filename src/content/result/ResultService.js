@@ -132,7 +132,7 @@ class ResultService {
                 difficult: Math.round(goodAnswerExpert * 100 / totalExpert)
             }
         };
-        localStorage.setItem('result', JSON.stringify(this.results));
+        LocalStorageService.setItem('result', this.results);
     }
 
     getResults(){
