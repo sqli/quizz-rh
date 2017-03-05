@@ -1,6 +1,6 @@
 var axios = require('axios');
 var MockAdapter = require('axios-mock-adapter');
-var themes = require("../../stub/themes.json");
+//var themes = require("../../stub/themes.json");
 
 let mocklist;
 class MockAxios {
