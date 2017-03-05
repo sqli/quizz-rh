@@ -11,6 +11,7 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import Theme from './../../components/theme/Theme';
 import ThemeService from './ThemeService';
 import QuestionService from '../question/QuestionService';
+import LocalStorageService from '../../commons/LocalStorageService';
 
 import './Themes.css';
 
@@ -33,6 +34,8 @@ class Themes extends Component {
     }
 
     start(){
+        ThemeService.setSelectedThemes(ThemeService.getBasket());
+        LocalStorageService.setItem('stepIndex', 1);
         QuestionService.addQuestion(ThemeService.getSelectedQuestions());
         browserHistory.push('/question/1');
     }
@@ -53,6 +56,7 @@ class Themes extends Component {
                             badgeContent={this.state.nbQuestionsIntoBasket}
                             primary={this.state.isEnoughToStart}
                             secondary={!this.state.isEnoughToStart}
+                            badgeStyle={{'marginTop':'1em'}}
                             >
                             <NotificationsIcon />
                         </Badge>

@@ -5,6 +5,8 @@ import { browserHistory } from 'react-router';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import ActionDone from 'material-ui/svg-icons/action/done';
+import LoginService from '../../content/login/LoginService';
+import LocalStorageService from '../../commons/LocalStorageService';
 
 import './Login.css';
 
@@ -14,7 +16,7 @@ class Login extends Component {
 
     constructor(props) {
         super(props);
-
+        LocalStorageService.clear();
         this.submit = this.submit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.isValid = this.isValid.bind(this);
@@ -26,6 +28,7 @@ class Login extends Component {
 
     submit(event){
         event.preventDefault();
+        LoginService.setLogin(this.state.login);
         browserHistory.push('/themes');
     }
 

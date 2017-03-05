@@ -8,6 +8,9 @@ import IconNeutral from 'material-ui/svg-icons/social/sentiment-neutral';
 import IconSatisfied from 'material-ui/svg-icons/social/sentiment-satisfied';
 import IconVerySatisfied from 'material-ui/svg-icons/social/sentiment-very-satisfied';
 
+import ThemesService from '../../content/theme/ThemeService';
+import LocalStorageService from '../../commons/LocalStorageService';
+
 const bounds = {
     verySatisfied: {
         legend: 'Très satisfaisant',
@@ -39,8 +42,107 @@ const bounds = {
 
 class ResultService {
 
-    satisfaction(result) {
+    results = null;
 
+    setResults(questions) {
+        // TODO make level dynamic
+        // Level
+        var totalEasy = 0;
+        var goodAnswerEasy = 0;
+        var totalMedium = 0;
+        var goodAnswerMedium = 0;
+        var totalExpert = 0;
+        var goodAnswerExpert = 0;
+        // Total
+        var totalGoodAnswer = 0;
+        var selectedThemes = ThemesService.getSelectedThemes();
+
+        // Verify that only good answers are checked.
+        questions.forEach(function (question) {
+            var answersAreTrue = false;
+            var trueAnswerCount = 0;
+            var answerCheckedCount = 0;
+            var trueAnswerChecked = 0;
+            var falseAnswerChecked = 0;
+
+            question.responses.forEach(function (answer) {
+                if (answer.isTrue) {
+                    trueAnswerCount++;
+                }
+                if (answer.checked){
+                    answerCheckedCount++;
+                }
+                if (answer.isTrue && answer.checked) {
+                    trueAnswerChecked++;
+                }
+                if (!answer.isTrue && answer.checked) {
+                    falseAnswerChecked++
+                }
+                answersAreTrue = (
+                    answerCheckedCount > 0
+                    && trueAnswerCount === trueAnswerChecked
+                    && falseAnswerChecked === 0
+                );
+            });
+
+            // Count good answer
+            if (answersAreTrue) totalGoodAnswer++;
+
+            // Count good answer per level.
+            switch (question.level) {
+                case 'Débutant':
+                    totalEasy++;
+                    if (answersAreTrue) goodAnswerEasy++;
+                    break;
+                case 'Intermédiaire':
+                    totalMedium++;
+                    if (answersAreTrue) goodAnswerMedium++;
+                    break;
+                case 'Expert':
+                    totalExpert++;
+                    if (answersAreTrue) goodAnswerExpert++;
+                    break;
+                default:
+                    console.error('Une question n\'a pas été comptabilisé dans les niveaux de difficulté');
+
+            }
+
+            // Count good answer per theme
+            selectedThemes.forEach(function(theme){
+                theme.result = theme.result || 0;
+                if(question.theme.name === theme.name && answersAreTrue){
+                    theme.result++;
+                }
+            });
+
+        });
+
+        // Convert good answer per level in percent
+        selectedThemes.forEach(function(theme){
+            theme.result = (theme.result * 100 / theme.questions.length) || 0;
+        });
+
+        // Prepare result object
+        this.results = {
+            totalGoodAnswer: Math.round(totalGoodAnswer * 100 / questions.length),
+            theme: selectedThemes,
+            level:{
+                easy: Math.round(goodAnswerEasy * 100 / totalEasy),
+                medium: Math.round(goodAnswerMedium * 100 /  totalMedium),
+                difficult: Math.round(goodAnswerExpert * 100 / totalExpert)
+            }
+        };
+        localStorage.setItem('result', JSON.stringify(this.results));
+    }
+
+    getResults(){
+        if(!this.results){
+            this.results = LocalStorageService.getItem('result');
+        }
+        return this.results;
+    }
+
+    satisfaction(result) {
         if (result > bounds.satisfied.maxResult && result <= bounds.verySatisfied.maxResult) {
             return bounds.verySatisfied.icon;
         } else if (result > bounds.neutral.maxResult && result <= bounds.satisfied.maxResult) {
@@ -66,7 +168,6 @@ class ResultService {
     }
 
     query = () => {
-        console.log('yo');
         return Result.query();
     }
 

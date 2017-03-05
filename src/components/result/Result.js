@@ -11,7 +11,7 @@ class Result extends Component {
     constructor(props){
         super(props);
         this.result = props.value.result;
-        this.theme = props.value.theme;
+        this.theme = props.value;
     }
 
     render() {

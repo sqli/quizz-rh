@@ -1,10 +1,12 @@
 import {Theme} from '../../resource/index';
+import LocalStorageService from '../../commons/LocalStorageService';
 
-const nbQuestionsMinToStart = 20;
+const nbQuestionsMinToStart = 4;
 
 class ThemeService {
 
     basket = [];
+    selectedThemes = [];
 
     addThemeIntoBasket(theme){
         this.basket.push(theme);
@@ -35,6 +37,22 @@ class ThemeService {
         return nbQuestionsMinToStart;
     }
 
+    getBasket(){
+        return this.basket;
+    }
+
+    setSelectedThemes(themes){
+        LocalStorageService.setItem('selectedThemes', themes);
+        this.selectedThemes = themes;
+    }
+
+    getSelectedThemes(){
+        if(this.selectedThemes.length === 0){
+            this.selectedThemes = LocalStorageService.getItem('selectedThemes')
+        }
+        return this.selectedThemes;
+    }
+
     getSelectedQuestions(){
         var questions = [];
         this.basket.forEach(function(theme){
@@ -44,7 +62,7 @@ class ThemeService {
                     theme: {
                         id: theme.id,
                         name: theme.name,
-                        logo: theme.logo,
+                        logo: theme.logo
 
                     },
                     level: question.level,
@@ -59,7 +77,6 @@ class ThemeService {
     }
 
     query = () => {
-        console.log(Theme);
         return Theme.query();
     }
 }

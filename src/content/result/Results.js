@@ -4,6 +4,7 @@ import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 
 import Result from './../../components/result/Result';
+
 import ResultService from './ResultService';
 
 import './Results.css';
@@ -13,43 +14,48 @@ class Results extends Component {
 
     constructor(props){
         super(props);
+        var results = ResultService.getResults();
         this.state = {
             results: props.value || [],
-            legends: ResultService.getLegends()
+            legends: ResultService.getLegends(),
+            resultsTheme: results.theme,
+            resultsLevel: results.level
         };
         this.legends = ResultService.getLegends();
     }
 
     componentDidMount(){
-        console.log('componentDidMount');
-        ResultService.query().then(function(results){
-            console.log('componentDidMount', 'resolve');
-            this.setState({results: results});
-        }.bind(this));
+        //ResultService.query().then(function(results){
+        //    this.setState({results: results});
+        //}.bind(this));
     }
 
     render() {
         return (
-            <div>
-                <ul>
-                    {
-                        this.state.results.map((result, index) =>
+            <div className="row ">
+                <div className="flex"></div>
+                <div className="column">
+                    <div className="row justifyCenter">
+                        {
+                            this.state.resultsTheme.map((result, index) =>
                                 <Result key={index} value={result}/>
-                        )
-                    }
-                </ul>
-                <List>
-                    {
-                        this.legends.map((item, index) =>
+                            )
+                        }
+                    </div>
+                    <List className="row">
+                        {
+                            this.legends.map((item, index) =>
                                 <ListItem
                                     key={index}
                                     disabled={true}
                                     leftAvatar={item.icon}
-                                    >
-                                    {item.legend} {'<= ' + item.maxResult}
+                                    primaryText={item.legend + '<= ' + item.maxResult}
+                                >
                                 </ListItem>
-                        )}
-                </List>
+                            )}
+                    </List>
+                </div>
+                <div className="flex"></div>
             </div>
         );
     }
