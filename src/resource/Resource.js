@@ -1,5 +1,5 @@
 import axios from 'axios';
-import urlJoin from 'url-join';
+//import urlJoin from 'url-join';
 import config from '../config';
 
 export default class Resource {
