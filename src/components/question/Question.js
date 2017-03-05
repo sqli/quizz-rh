@@ -7,8 +7,6 @@ import '../../../node_modules/react-highlight/node_modules/highlight.js/styles/a
 import {Card, CardText, CardMedia, CardHeader} from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
 
-import QuestionService from '../../content/question/QuestionService';
-
 import './Question.css';
 
 class Question extends Component {
@@ -22,7 +20,7 @@ class Question extends Component {
     }
 
     componentDidMount(){
-        const question = QuestionService.findQuestionByIndex(this.props.params.id-1);
+        const question = this.props.question;
         if(!question){
             browserHistory.push('/themes');
         }else{
@@ -32,9 +30,10 @@ class Question extends Component {
         }
     }
 
+
     componentWillReceiveProps(nextProps) {
         this.index = nextProps.params.id -1;
-        const question = QuestionService.findQuestionByIndex(this.index);
+        const question = nextProps.question;
         this.setState({
             question: question
         });
@@ -47,6 +46,7 @@ class Question extends Component {
         this.setState({
             question: question
         });
+
     };
 
     render() {
@@ -69,7 +69,7 @@ class Question extends Component {
                                     onCheck={this.handleCheck.bind(this, index)}
                                     key={index}
                                     label={response.title}
-                                    defaultChecked={response.checked}
+                                    checked = {response.checked || false}
                                 />)
                         }
                     </CardText>

@@ -43,6 +43,11 @@ class Questions extends Component {
         browserHistory.push('/result');
     };
 
+    go = (stepIndex) => {
+        this.setState({stepIndex: stepIndex});
+        browserHistory.push('/question/' + stepIndex);
+    };
+
     next = () => {
         const stepIndex = this.state.stepIndex + 1;
         if (stepIndex <= this.state.questions.length) {
@@ -78,7 +83,7 @@ class Questions extends Component {
                             >
                                 {this.state.questions.map((question, index) =>
                                     <Step key={index}>
-                                        <StepButton onTouchTap={() => browserHistory.push('/question/' + (index + 1))}>
+                                        <StepButton onTouchTap={() => this.go(index +1)}>
                                             <Chip className="Questions-chip">
                                                 <Avatar src={question.theme.logo}/>
                                                 {question.theme.name}
@@ -90,7 +95,9 @@ class Questions extends Component {
                         </Paper>
                     </div>
                     <div className="Questions">
-                        {this.props.children}
+                        {this.props.children && React.cloneElement(this.props.children, {
+                            question: QuestionService.findQuestionByIndex(this.props.children.props.params.id-1)
+                        })}
                     </div>
                 </div>
                 <Paper zDepth={1}>
