@@ -24,3 +24,7 @@
         width: calc(25% - 40px);
     }
 }
+
+.snackBar {
+    margin-bottom: 5em;
+}

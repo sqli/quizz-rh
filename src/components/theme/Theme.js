@@ -47,10 +47,12 @@ class Theme extends Component {
     };
 
     render() {
+
         return (
             <Card className="Theme" style={{backgroundColor: ThemeService.themeIsIntoBasket(this.theme) ? 'lightBlue': 'white'}}>
                 <CardHeader
                     title={this.theme.name}
+                    titleStyle={{'lineHeight': '2.8em'}}
                     avatar={this.theme.logo}
                     />
                 <CardTitle title={this.theme.questions.length + ' Questions'} />
@@ -78,6 +80,7 @@ class Theme extends Component {
                     message={this.state.snackbar.message}
                     autoHideDuration={2000}
                     onRequestClose={this.handleRequestClose}
+                    className="snackBar"
                     />
             </Card>
         );

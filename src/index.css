@@ -20,3 +20,23 @@ main > *{
   padding: 0px;
   overflow-y: auto;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  flex-grow: 1
+}
+
+.justifyCenter {
+  justify-content: center;
+}
