@@ -1,7 +1,7 @@
 import {Theme} from '../../resource/index';
 import LocalStorageService from '../../commons/LocalStorageService';
 
-const nbQuestionsMinToStart = 4;
+import {config} from '../../config.js';
 
 class ThemeService {
 
@@ -34,7 +34,7 @@ class ThemeService {
     }
 
     getNbQuestionsMinToStart(){
-        return nbQuestionsMinToStart;
+        return config.nbQuestionsMinToStart;
     }
 
     getBasket(){

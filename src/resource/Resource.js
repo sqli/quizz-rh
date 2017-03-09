@@ -1,6 +1,6 @@
 import axios from 'axios';
-//import urlJoin from 'url-join';
-import config from '../config';
+
+import {config} from '../config.js';
 
 export default class Resource {
 
