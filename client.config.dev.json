@@ -1,4 +1,4 @@
 {
   "apiPrefix": "http://localhost:7171/api",
-  "env": "STUB"
+  "nbQuestionsMinToStart": 4,
 }
