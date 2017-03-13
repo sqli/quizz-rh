@@ -6,7 +6,7 @@ import FlatButton from 'material-ui/FlatButton';
 import IconAddShoppingCart from '../../../node_modules/material-ui/svg-icons/action/add-shopping-cart';
 import IconDeleteForever from '../../../node_modules/material-ui/svg-icons/action/delete-forever';
 
-import ThemeService from './../../content/theme/ThemeService';
+import ThemeService from '../../services/ThemeService';
 
 import './Theme.css';
 

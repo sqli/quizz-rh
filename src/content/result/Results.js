@@ -5,7 +5,7 @@ import ListItem from 'material-ui/List/ListItem';
 
 import Result from './../../components/result/Result';
 
-import ResultService from './ResultService';
+import ResultService from './../../services/ResultService';
 
 import './Results.css';
 

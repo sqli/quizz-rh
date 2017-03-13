@@ -9,7 +9,7 @@ class AppStub extends App {
     constructor(props) {
         super(props);
         MockAxios.addMocks([
-            ['GET', '/themes', 200, themes,],
+            ['GET', '/themes', 200, themes],
             ['GET', '/results', 200, results]
         ]);
     }

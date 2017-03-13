@@ -5,8 +5,9 @@ import { browserHistory } from 'react-router';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import ActionDone from 'material-ui/svg-icons/action/done';
-import LoginService from '../../content/login/LoginService';
-import LocalStorageService from '../../commons/LocalStorageService';
+
+import LoginService from '../../services/LoginService';
+import LocalStorageService from '../../services/LocalStorageService';
 
 import './Login.css';
 

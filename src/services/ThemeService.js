@@ -1,5 +1,5 @@
 import {Theme} from '../resource/index';
-import LocalStorageService from '../commons/LocalStorageService';
+import LocalStorageService from './LocalStorageService';
 
 import {config} from '../config.js';
 

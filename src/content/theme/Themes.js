@@ -9,9 +9,9 @@ import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 
 import Theme from './../../components/theme/Theme';
-import ThemeService from './ThemeService';
-import QuestionService from '../question/QuestionService';
-import LocalStorageService from '../../commons/LocalStorageService';
+import ThemeService from './../../services/ThemeService';
+import QuestionService from '../../services/QuestionService';
+import LocalStorageService from '../../services/LocalStorageService';
 
 import './Themes.css';
 

@@ -1,4 +1,4 @@
-import localStorageService from 'LocalStorageService';
+import localStorageService from './LocalStorageService';
 
 class LoginService {
 

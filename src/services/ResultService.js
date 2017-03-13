@@ -9,7 +9,7 @@ import IconVerySatisfied from '../../node_modules/material-ui/svg-icons/social/s
 import {Result} from '../resource/index';
 
 import ThemesService from './ThemeService';
-import LocalStorageService from '../commons/LocalStorageService';
+import LocalStorageService from './LocalStorageService';
 
 const bounds = {
     verySatisfied: {

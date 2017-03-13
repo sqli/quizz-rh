@@ -1,4 +1,4 @@
-import localStorageService from '../commons/LocalStorageService';
+import localStorageService from './LocalStorageService';
 
 import {config} from '../config.js';
 

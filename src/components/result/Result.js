@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 
-import ResultService from './../../content/result/ResultService';
+import ResultService from '../../services/ResultService';
 
 import './Result.css';
 
