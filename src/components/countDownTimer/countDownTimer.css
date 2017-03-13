@@ -1,0 +1,33 @@
+.countDownTimer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+}
+
+.countDownTimer-progress {
+    width: 100px;
+    height: 100px;
+    font-size: 33.3333px;
+    position: relative;
+    transform: rotate(-90deg);
+}
+
+.countDownTimer-progress circle {
+    stroke-linecap: square;
+}
+.countDownTimer-time {
+    color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    margin-top: -13px;
+    left: 50%;
+    margin-left: -39px;
+}
