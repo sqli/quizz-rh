@@ -2,19 +2,24 @@ import React, { Component } from 'react';
 
 import { browserHistory } from 'react-router';
 
-import {Step, Stepper, StepButton} from 'material-ui/Stepper';
-import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
-import FontIcon from 'material-ui/FontIcon';
+import RaisedButton from 'material-ui/RaisedButton';
+import LinearProgress from 'material-ui/LinearProgress';
+import {fullWhite} from 'material-ui/styles/colors';
+
+//import FontIcon from 'material-ui/FontIcon';
 import IconArrowBack from '../../../node_modules/material-ui/svg-icons/navigation/arrow-back';
 import IconArrowForward from '../../../node_modules/material-ui/svg-icons/navigation/arrow-forward';
 import IconCheck from '../../../node_modules/material-ui/svg-icons/navigation/check';
-import Avatar from 'material-ui/Avatar';
-import Chip from 'material-ui/Chip';
 
-import QuestionService from './QuestionService';
-import ResultService from '../result/ResultService';
-import LocalStorageService from '../../commons/LocalStorageService'
+import CountDownTimer from '../../components/countDownTimer/CountDownTimer';
+import QuestionNavigation from '../../components/questionNavigation/QuestionNavigation';
+
+import ThemeService from '../../services/ThemeService';
+import QuestionService from './../../services/QuestionService';
+import ResultService from '../../services/ResultService';
+import LocalStorageService from '../../services/LocalStorageService';
+
 
 import './Questions.css';
 
@@ -23,16 +28,18 @@ class Questions extends Component {
     constructor(props) {
         super(props);
         const questions = QuestionService.getQuestions();
+        this.themes = ThemeService.getSelectedThemes();
         this.state = {
-            stepIndex: parseInt(props.params.id, 0)|| LocalStorageService.getItem('stepIndex'),
+            stepIndex: parseInt(props.params.id, 0) || LocalStorageService.getItem('stepIndex'),
             completed: questions.length,
-            questions: questions
+            questions: questions,
+            progress: 0
         };
 
     }
 
-    componentDidMount(){
-        if(this.state.stepIndex > 0){
+    componentDidMount() {
+        if (this.state.completed > 0) {
             browserHistory.push('/question/' + this.state.stepIndex);
         }
     }
@@ -52,6 +59,9 @@ class Questions extends Component {
         const stepIndex = this.state.stepIndex + 1;
         if (stepIndex <= this.state.questions.length) {
             this.setState({stepIndex: stepIndex});
+            this.setState({
+                progress: stepIndex * 100 / this.state.completed
+            });
             this.props.router.push('/question/' + stepIndex);
         }
         LocalStorageService.setItem('questions', this.state.questions);
@@ -68,65 +78,61 @@ class Questions extends Component {
         LocalStorageService.setItem('stepIndex', stepIndex);
     };
 
+
     render() {
-        const isFirstStep = this.state.stepIndex === 1;
-        const isLastStep = this.state.stepIndex === this.state.questions.length;
         return (
-            <div>
+            <div className="quizz-page">
                 <div className="content-with-paper">
-                    <div className="Questions-stepper">
-                        <Paper zDepth={1}>
-                            <Stepper
-                                activeStep={this.state.stepIndex - 1}
-                                linear={false}
-                                orientation="vertical"
-                            >
-                                {this.state.questions.map((question, index) =>
-                                    <Step key={index}>
-                                        <StepButton onTouchTap={() => this.go(index +1)}>
-                                            <Chip className="Questions-chip">
-                                                <Avatar src={question.theme.logo}/>
-                                                {question.theme.name}
-                                            </Chip>
-                                        </StepButton>
-                                    </Step>
-                                )}
-                            </Stepper>
+                    <div className="Questions">
+                        <Paper className="Question-paper">
+                            <div>
+                                {this.props.children && React.cloneElement(this.props.children, {
+                                    question: QuestionService.findQuestionByIndex(this.props.children.props.params.id - 1)
+                                })}
+                            </div>
+                            <div className="question-navigation">
+                                <div className="raisedButton">
+                                    <RaisedButton
+                                        label='Back'
+                                        primary={true}
+                                        icon={<IconArrowBack />}
+                                        disabled={this.state.stepIndex === 1}
+                                        onTouchTap={this.back}
+                                    />
+                                </div>
+                                <div className="question-navigation-step">
+                                    <span>{this.state.stepIndex } / {this.state.completed}</span>
+                                </div>
+                                <div className="raisedButton">
+                                    <RaisedButton
+                                        label={this.state.stepIndex === this.state.completed ? 'Validate' : 'Next'}
+                                        primary={this.state.stepIndex !== this.state.completed}
+                                        backgroundColor="#a4c639"
+                                        labelColor="white"
+                                        icon={this.state.stepIndex === this.state.completed ? <IconCheck color={fullWhite}/> : <IconArrowForward />}
+                                        onTouchTap={this.state.stepIndex === this.state.completed ? this.finish : this.next}
+                                    />
+                                </div>
+                            </div>
                         </Paper>
                     </div>
-                    <div className="Questions">
-                        {this.props.children && React.cloneElement(this.props.children, {
-                            question: QuestionService.findQuestionByIndex(this.props.children.props.params.id-1)
-                        })}
+                    <div className="Questions-nav">
+                        <Paper zDepth={1} className="Questions-nav-paper">
+                            <div className="time-section">
+                                <span className="section-header">Time</span>
+                                <CountDownTimer initialTimeRemaining={QuestionService.getTotalTime(this.state.completed)} onComplete={this.finish.bind(this)}/>
+                            </div>
+                            <div className="progress-section">
+                                <span  className="section-header">Progress</span>
+                                <LinearProgress mode="determinate" value={this.state.progress}/>
+                            </div>
+                            <div className="stepper-section">
+                                <span  className="section-header">Questions</span>
+                                <QuestionNavigation themes={this.themes} questions={this.state.questions} stepIndex={this.state.stepIndex} handleGo={this.go.bind(this)}/>
+                            </div>
+                        </Paper>
                     </div>
                 </div>
-                <Paper zDepth={1}>
-                    <BottomNavigation selectedIndex={this.state.selectedIndex}>
-                        <BottomNavigationItem
-                            disabled={isFirstStep}
-                            label="Back"
-                            icon={<IconArrowBack />}
-                            onTouchTap={() => this.back()}
-                        />
-                        <BottomNavigationItem
-                            label="Questions"
-                            icon={<FontIcon className="material-icons">{this.state.stepIndex} / {this.state.completed}</FontIcon>}
-                        />
-                        {isLastStep ? (
-                            <BottomNavigationItem
-                                label="Validate"
-                                icon={<IconCheck />}
-                                onTouchTap={() => this.finish()}
-                            />
-                        ) : (
-                            <BottomNavigationItem
-                                label="Next"
-                                icon={<IconArrowForward />}
-                                onTouchTap={() => this.next()}
-                            />
-                        )}
-                    </BottomNavigation>
-                </Paper>
             </div>
         );
     }

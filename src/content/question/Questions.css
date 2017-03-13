@@ -1,21 +1,96 @@
+.quizz-page {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: calc(100% - 50px);
+    width: 100%;
+    position: relative;
+    padding-bottom: 50px;
+    background: #eaeaea;
+}
+.quizz-page .content-with-paper {
+    overflow-y: visible;
+    transition: .35s;
+    width: calc(100% - 50px);
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-top: 50px;
+    max-width: 1300px;
+    display: flex;
+    height: 100%
+}
+
+
 .Questions{
-    width: calc(100% - 23% - 200px);
-    display: inline-block;
-    padding: 0px;
-    margin: 0px;
+    width: 73%;
+    position: relative;
+    height: 100%
 }
-.Questions-stepper{
-    width: 200px;
+.Question-paper{
+    /*margin: 20px;*/
+}
+
+.question-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 20px 15px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.question-navigation .raisedButton {
+    margin: 0 50px
+}
+.question-navigation .question-navigation-step {
     display: inline-block;
 }
-.Questions-nav {
+.question-navigation .question-navigation-step span {
+    vertical-align: -webkit-baseline-middle;
+    font-size: 18px;
+}
+
+.quizz-page .Questions-nav {
     width: 23%;
     display: inline-block;
+    margin-right: 10px;
 }
-@media screen and (max-width: 600px) {
-    .Questions-stepper{
-        width: 100px;
+.quizz-page .Questions-nav .Questions-nav-paper {
+    padding: 20px;
+}
+.quizz-page .Questions-nav .Questions-nav-paper .section-header {
+    font-size: 16px;
+    display: inline-block;
+    color: rgba(0, 0, 0, .67);
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+.quizz-page .Questions-nav .Questions-nav-paper .time-section {
+    margin-bottom: 20px;
+}
+.quizz-page .Questions-nav .Questions-nav-paper .progress-section {
+    margin-bottom: 20px;
+}
+.quizz-page .Questions-nav .Questions-nav-paper .stepper-section{
+    margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .Questions {
+        width: 95%;
+        padding: 0;
+        margin: 20px auto 0
     }
+}
+
+@media screen and (max-width: 600px) {
     .Questions{
         width: calc(100% - 120px);
         display: inline-block;
