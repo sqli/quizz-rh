@@ -1,4 +1,5 @@
 {
-  "apiPrefix": "",
-  "nbQuestionsMinToStart": 20
+  "apiPrefix": "localhost",
+  "nbQuestionsMinToStart": 20,
+  "timePerQuestion": 60
 }
