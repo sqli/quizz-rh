@@ -1,7 +1,7 @@
-import {Theme} from '../../resource/index';
-import LocalStorageService from '../../commons/LocalStorageService';
+import {Theme} from '../resource/index';
+import LocalStorageService from '../commons/LocalStorageService';
 
-import {config} from '../../config.js';
+import {config} from '../config.js';
 
 class ThemeService {
 

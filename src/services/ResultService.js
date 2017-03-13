@@ -1,15 +1,15 @@
 import React  from 'react';
 
-import {Result} from '../../resource/index';
+import IconVeryDissatisfied from '../../node_modules/material-ui/svg-icons/social/sentiment-very-dissatisfied';
+import IconDissatisfied from '../../node_modules/material-ui/svg-icons/social/sentiment-dissatisfied';
+import IconNeutral from '../../node_modules/material-ui/svg-icons/social/sentiment-neutral';
+import IconSatisfied from '../../node_modules/material-ui/svg-icons/social/sentiment-satisfied';
+import IconVerySatisfied from '../../node_modules/material-ui/svg-icons/social/sentiment-very-satisfied';
 
-import IconVeryDissatisfied from 'material-ui/svg-icons/social/sentiment-very-dissatisfied';
-import IconDissatisfied from 'material-ui/svg-icons/social/sentiment-dissatisfied';
-import IconNeutral from 'material-ui/svg-icons/social/sentiment-neutral';
-import IconSatisfied from 'material-ui/svg-icons/social/sentiment-satisfied';
-import IconVerySatisfied from 'material-ui/svg-icons/social/sentiment-very-satisfied';
+import {Result} from '../resource/index';
 
-import ThemesService from '../../content/theme/ThemeService';
-import LocalStorageService from '../../commons/LocalStorageService';
+import ThemesService from './ThemeService';
+import LocalStorageService from '../commons/LocalStorageService';
 
 const bounds = {
     verySatisfied: {
