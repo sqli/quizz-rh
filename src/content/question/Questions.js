@@ -47,7 +47,7 @@ class Questions extends Component {
     finish = () => {
         ResultService.setResults(this.state.questions);
         LocalStorageService.removeItem('stepIndex');
-        browserHistory.push('/result');
+        browserHistory.push('/check');
     };
 
     go = (stepIndex) => {

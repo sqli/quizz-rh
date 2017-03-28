@@ -11,7 +11,7 @@ import Themes from './content/theme/Themes';
 import Questions from './content/question/Questions';
 import Question from './components/question/Question';
 import Results from './content/result/Results';
-
+import CheckValidate from './content/question/CheckValidate';
 import './index.css';
 
 ReactDOM.render(
@@ -23,6 +23,7 @@ ReactDOM.render(
                 <Route path=":id" component={Question}/>
             </Route>
             <Route path="result" component={Results}/>
+            <Route path="check" component={CheckValidate}/>
             <Route path="*" component={Login}/>
         </Route>
     </Router>,
