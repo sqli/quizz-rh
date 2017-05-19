@@ -56,6 +56,10 @@ class Theme extends Component {
                     avatar={this.theme.logo}
                     />
                 <CardTitle title={this.theme.questions.length + ' Questions'} />
+                <CardHeader
+                    subtitle={this.theme.referent.firstName + ' ' + this.theme.referent.lastName}
+                    avatar={this.theme.referent.avatar}
+                    />
                 <CardActions>
                     {
                         ThemeService.themeIsIntoBasket(this.theme)   &&

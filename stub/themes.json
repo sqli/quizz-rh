@@ -3,6 +3,11 @@
     "id": 1,
     "name": "HTML",
     "logo": "http://blog.netapsys.fr/wp-content/uploads/2011/05/HTML5_Logo_2562.png",
+    "referent": {
+      "firstName": "Alexandre",
+      "lastName": "Escudero",
+      "avatar": "https://sqli468.sharepoint.com/sites/collaboratifs/Toulouse%20Comit%C3%A9%20Technique/SiteAssets/team-members/Alexandre.png"
+    },
     "questions": [
       {
         "id": 1,
@@ -28,20 +33,20 @@
       {
         "id": 2,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quels sont les deux attributs obligatoires de la balise",
+        "code": "<img/>",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "code": "<img title=\"\" href=\"\"/>"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "code": "<img src=\"\" recto=\"\"/>"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "code": "<img href=\"\" alt=\"\"/>"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "code": "<img alt=\"\" src=\"\"/>",
             "isTrue": true
           }
         ]
@@ -49,20 +54,20 @@
       {
         "id": 3,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quel doit être le type d’un bouton d’envoi d’un formulaire HTML5",
+        "code": "<button></button>",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "code": "<button type=\"post\"></button>"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "code": "<button type=\"go\"></button>"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "code": "<button type=\"send\"></button>"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "code": "<button type=\"submit\"></button>",
             "isTrue": true
           }
         ]
@@ -70,104 +75,110 @@
       {
         "id": 4,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelle(s) proposition(s) est/sont vraie(s) ",
+        "code": "<form>\n\t<label>User Name</label>\n\t<textarea name=\"username\"/>\n</form>",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "La balise « textarea » n’existe pas"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "La balise « textarea » doit s’ouvrir et se fermer comme cela :",
+            "code": "<textarea name=\"username\"></textarea>",
             "isTrue": true
+          },
+          {
+            "title": "Il est obligatoire d’ajouter de « id » aux « label » et « textarea »"
+          },
+          {
+            "title": "Il manque le type à la balise « textarea »"
           }
         ]
       },
       {
         "id": 5,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelle(s) proposition(s) est/sont vraie(s) ",
+        "code": "<form>\n\t<label for=\"username\">User Name</label>\n\t<input id=\"username\" type=\"text\"/>\n</form>",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Le label affiché sera  « username »"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Le label est l’input sont techniquement liés grâce à for/id",
             "isTrue": true
+          },
+          {
+            "title": "Lorsque l’utilisateur va cliquer sur le label, le focus sera dans l’input",
+            "isTrue": true
+          },
+          {
+            "title": "La balise « input » doit s’ouvrir et ce fermer comme cela :",
+            "code": "<input id=\"username\" type=\"text\"></input>"
           }
         ]
       },
       {
         "id": 6,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Parmi les méthodes suivantes, laquelle appartient à l'API localStorage ",
+        "code": "",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "code": "addItem(key, value)"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "code": "setItem(key, value)",
             "isTrue": true
+          },
+          {
+            "code": "retrieveItem(key)"
+          },
+          {
+            "code": "deleteItem(key)"
+          },
+          {
+            "code": "removeAll()"
           }
         ]
       },
       {
         "id": 7,
         "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelle est la forme correcte de la balise doctype",
+        "code": "",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "code": "<!DOCTYPE HTML5>"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "code": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 5.0//EN\" \"http://www.w3.org/TR/html5/strict.dtd\">"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "code": "<!DOCTYPE html>",
             "isTrue": true
+          },
+          {
+            "code": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML5.0 Strict//EN\">"
           }
         ]
       },
       {
         "id": 8,
         "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Dans l’index.html pour des questions de performance, Il est préférable d’importer les scripts javascript",
+        "code": "",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "dans l’élément :",
+            "code": "<head></head>"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "au début de l’élément",
+            "code": "<body></body>"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "à la fin de l’élément",
+            "code": "<body></body>",
             "isTrue": true
           }
         ]
@@ -175,20 +186,20 @@
       {
         "id": 9,
         "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelle(s) proposition(s) est/sont vraie(s)",
+        "code": "",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "L'ordre des attributs d’un élément HTML a une incidence sur son rendu"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "La simple présence d’un attribut booléen dans un élément HTML5 implique qu’il vaut true ; par exemple pour l’attribut disabled : ",
+            "code": "<input id=\"username\" type=\"text\" disabled></input>",
+            "isTrue": true
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Il est recommandé de renseigner l’attribut name dans un élément <input/> présent dans un formulaire <form> ; par exemple : ",
+            "code": "<form name=\"userForm\">\n\t<input type=\"text\" name=\"firstName\" />\n</form>",
             "isTrue": true
           }
         ]
@@ -196,21 +207,18 @@
       {
         "id": 10,
         "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Dans la mesure du possible, il faut spécifier le style de l’application dans",
+        "code": "",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "les templates HTML"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "les feuilles de style CSS",
             "isTrue": true
+          },
+          {
+            "title": "les scripts javascript"
           }
         ]
       }
@@ -220,6 +228,11 @@
     "id": 2,
     "name": "JavaScript",
     "logo": "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/082014/js1_0.png?itok=BqOjTfHU",
+    "referent": {
+      "firstName": "Robin",
+      "lastName": "Coma Delperier",
+      "avatar": "https://sqli468.sharepoint.com/sites/collaboratifs/Toulouse%20Comit%C3%A9%20Technique/SiteAssets/team-members/Robin.png"
+    },
     "questions": [
       {
         "id": 1,
@@ -437,6 +450,11 @@
     "id": 3,
     "name": "AngularJS",
     "logo": "http://blog.netapsys.fr/wp-content/uploads/2015/01/angularjs-logo.png.pagespeed.ce_.2SfPGmgT_b1.png",
+    "referent": {
+      "firstName": "Robin",
+      "lastName": "Coma Delperier",
+      "avatar": "https://sqli468.sharepoint.com/sites/collaboratifs/Toulouse%20Comit%C3%A9%20Technique/SiteAssets/team-members/Robin.png"
+    },
     "questions": [
       {
         "id": 1,
@@ -652,8 +670,13 @@
   },
   {
     "id": 4,
-    "name": "Drupal",
-    "logo": "http://logosvector.net/wp-content/uploads/2011/05/drupal-logo-vector.png",
+    "name": "Java",
+    "logo": "http://logodatabases.com/wp-content/uploads/2012/03/java-logo-large.png",
+    "referent": {
+      "firstName": "Adèle",
+      "lastName": "Karam",
+      "avatar": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAjoAAAAJDQ3NDQ2YWY0LTUyZmEtNDM2NC04NjRlLTQwMDMyMmNmNTNlZA.jpg"
+    },
     "questions": [
       {
         "id": 1,
@@ -869,8 +892,13 @@
   },
   {
     "id": 5,
-    "name": "Java",
-    "logo": "http://logodatabases.com/wp-content/uploads/2012/03/java-logo-large.png",
+    "name": "Spring",
+    "logo": "http://www.unixstickers.com/image/cache/data/stickers/spring/xspring-leaf.sh-340x340.png.pagespeed.ic.K5PrZIokfE.png",
+    "referent": {
+      "firstName": "Adèle",
+      "lastName": "Karam",
+      "avatar": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAjoAAAAJDQ3NDQ2YWY0LTUyZmEtNDM2NC04NjRlLTQwMDMyMmNmNTNlZA.jpg"
+    },
     "questions": [
       {
         "id": 1,
@@ -1086,8 +1114,13 @@
   },
   {
     "id": 6,
-    "name": "PHP",
-    "logo": "https://blog.seboss666.info/wp-content/uploads/2014/11/fpmphp-logo.png",
+    "name": "Hibernate",
+    "logo": "https://uploads.toptal.io/blog/category/logo/32/hibernate.png",
+    "referent": {
+      "firstName": "Adèle",
+      "lastName": "Karam",
+      "avatar": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAjoAAAAJDQ3NDQ2YWY0LTUyZmEtNDM2NC04NjRlLTQwMDMyMmNmNTNlZA.jpg"
+    },
     "questions": [
       {
         "id": 1,
@@ -1295,6 +1328,182 @@
           },
           {
             "title": "la balise <il> n'existe pas",
+            "isTrue": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "PHP",
+    "logo": "https://blog.seboss666.info/wp-content/uploads/2014/11/fpmphp-logo.png",
+    "referent": {
+      "firstName": "Franck",
+      "lastName": "Fernandez",
+      "avatar": "https://sqli468.sharepoint.com/sites/collaboratifs/Toulouse%20Comit%C3%A9%20Technique/SiteAssets/team-members/Frank.png"
+    },
+    "questions": [
+      {
+        "id": 1,
+        "level": "Débutant",
+        "title": "Comment vérifier la syntaxe d'une adresse e-mail contenue dans la variable $email ?",
+        "responses": [
+          {
+            "code": "strpos($email,\"*@*.*\")"
+          },
+          {
+            "code": "ereg($email,\"[:alpha:]*@[:alpha:]*\\.[:alpha:]*\")"
+          },
+          {
+            "code": "preg_match(\"/^(\\w|-)+@((\\w|-)+\\.)+[a-z]{2,6}$/i\",$email)",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "level": "Débutant",
+        "title": "Par défaut, dans quel ordre de priorité sont affectées les variables envoyées par HTTP ?",
+        "responses": [
+          {
+            "title": "get, cookie, post"
+          },
+          {
+            "title": "post, get, cookie"
+          },
+          {
+            "title": "get, post, cookie",
+            "isTrue": true
+          },
+          {
+            "title": "post,cookie, get"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "level": "Débutant",
+        "title": "De quelle façon autorise-t-on l'accès à un fichier. - en lecture/écriture/exécution pour le propriétaire, - en lecture/écriture pour le groupe, - en lecture pour les autres ",
+        "responses": [
+          {
+            "code": "chmod('fichier',0764);",
+            "isTrue": true
+          },
+          {
+            "code": "chmod('fichier','u+wrx g+rw o+r');"
+          },
+          {
+            "code": "chown('fichier','0777');"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "level": "Débutant",
+        "title": "Comment vérifie-t-on l'égalité de deux variables : $a et $b ?",
+        "responses": [
+          {
+            "code": "$a = $b"
+          },
+          {
+            "code": "$a == $b",
+            "isTrue": true
+          },
+          {
+            "code": "$a != $b"
+          },
+          {
+            "code": "if($a,$b)"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "level": "Débutant",
+        "title": "Comment accède-t-on au 1er élément chaton dans le tableau suivant : ",
+        "code": "$tableau = Array('chaton' , 'ornithorynque', 'dauphin');",
+        "responses": [
+          {
+            "code": "$tableau[1]"
+          },
+          {
+            "code": "$tableau[0]",
+            "isTrue": true
+          },
+          {
+            "code": "$tableau{0}"
+          },
+          {
+            "code": "$tableau.get(1)"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "level": "Débutant",
+        "title": "Quelle est l'utilité de l'opérateur || ?",
+        "responses": [
+          {
+            "title": "Il sert à vérifier que toutes les conditions sont réalisées"
+          },
+          {
+            "title": "Il sert à vérifier qu'une, et une seule, des conditions est réalisée"
+          },
+          {
+            "title": "Il sert à vérifier qu'une, au moins, des conditions est réalisée",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "level": "Intermédiaire",
+        "title": "Sachant que $a = 4. Quelle instruction affiche : 4 = quatre ?",
+        "responses": [
+          {
+            "code": "echo '$a = quatre';"
+          },
+          {
+            "code": "echo '$a = 2+2';"
+          },
+          {
+            "code": "echo \"$a = quatre\";",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "level": "Intermédiaire",
+        "title": "Dans le cas d'envoi d'informations plus ou moins sensibles par formulaire, quelle méthode utilisera-t-on de préférence ?",
+        "responses": [
+          {
+            "title": "get"
+          },
+          {
+            "title": "mailto"
+          },
+          {
+            "title": "post",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "level": "Expert",
+        "title": "La boucle : ",
+        "code": "for ($i=0 ; $i<=3 ; $i++ ) { echo $i; }",
+        "responses": [
+          {
+            "title": "Sera éxécutée 2 fois"
+          },
+          {
+            "title": "Sera éxécutée 3 fois"
+          },
+          {
+            "title": "Sera éxécutée 4 fois",
             "isTrue": true
           }
         ]

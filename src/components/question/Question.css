@@ -1,6 +1,11 @@
 .question-code {
     margin: 20px;
 }
+.question-code-response pre code{
+    background-color: white;
+    padding: 0;
+    margin-left: 40px;
+}
 .Question form{
     width: 100%;
     margin: 0px 0px 0px 0px;

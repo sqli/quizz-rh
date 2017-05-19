@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
 var Highlight = require('react-highlight');
-import '../../../node_modules/react-highlight/node_modules/highlight.js/styles/atom-one-dark.css';
+import 'highlight.js/styles/atom-one-dark.css';
 
 import {Card, CardText, CardMedia, CardHeader, CardTitle} from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
@@ -60,24 +60,35 @@ class Question extends Component {
                     <CardTitle title={this.state.question.title + ' :'} />
                     <CardMedia>
                         <div className="question-content">
-                            <div>
-                            </div>
-                            <div className="question-code">
-                                <Highlight className={this.state.question.theme.name}>
-                                    {this.state.question.code}
-                                </Highlight>
-                            </div>
+                            {   this.state.question.code && 
+                                <div className="question-code">
+                                    <Highlight className={this.state.question.theme.name}>
+                                        {this.state.question.code}
+                                    </Highlight>
+                                </div>
+                            }
                         </div>
                     </CardMedia>
                     <CardText>
                         {
                             this.state.question.responses.map((response, index) =>
-                                <Checkbox
-                                    onCheck={this.handleCheck.bind(this, index)}
-                                    key={index}
-                                    label={response.title}
-                                    checked={response.checked || false}
-                                />)
+                                <div>
+                                    <Checkbox
+                                        onCheck={this.handleCheck.bind(this, index)}
+                                        key={index}
+                                        label={response.title}
+                                        checked={response.checked || false}
+                                    />
+                                    {
+                                        response.code &&
+                                        <div className="question-code-response">
+                                            <Highlight className={this.state.question.theme.name}>
+                                                {response.code}
+                                            </Highlight>
+                                        </div>
+                                    }
+                                </div>
+                                )
                         }
                     </CardText>
                 </Card>
