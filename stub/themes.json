@@ -237,20 +237,35 @@
       {
         "id": 1,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quel sont les types existant en JavaScript",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Number",
+            "isTrue": true
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "String",
+            "isTrue": true
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "Boolean",
+            "isTrue": true
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "Object",
+            "isTrue": true
+          },
+          {
+            "title": "Null"
+          },
+          {
+            "title": "Integer"
+          },
+          {
+            "title": "Double"
+          },
+          {
+            "title": "Array",
             "isTrue": true
           }
         ]
@@ -258,62 +273,56 @@
       {
         "id": 2,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelle est la valeur de result2 suite à cette instruction",
+        "code": "var result2 = '1' + 2 + 3;",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "'15'"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "6"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "'123'",
             "isTrue": true
+          },
+          {
+            "title": "15"
           }
         ]
       },
       {
         "id": 3,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Que renvoie sur la sortie de console le code suivant",
+        "code": "(function() {\n\tvar a = b = 5;\n})();\nconsole.log(b);",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "undefined"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "null"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "5",
             "isTrue": true
+          },
+          {
+            "title": "a"
           }
         ]
       },
       {
         "id": 4,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelle est la valeur de result4 suite à cette instruction",
+        "code": "var result4 = false == 'false';",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "true"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "false",
             "isTrue": true
           }
         ]
@@ -321,41 +330,37 @@
       {
         "id": 5,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Il est possible de remplacer la ligne 1 par la ligne 2 seulement si value5 n'est pas",
+        "code": "if (value5 !== null && value5!== undefined){}\nif(value5){}",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "0",
             "isTrue": true
+          },
+          {
+            "title": "false",
+            "isTrue": true
+          },
+          {
+            "title": "''",
+            "isTrue": true
+          },
+          {
+            "title": "'0'"
           }
         ]
       },
       {
         "id": 6,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelle est la valeur de result6 suite à cette instruction",
+        "code": "var result6 = null || 'Hello';",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "null"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "'Hello'",
             "isTrue": true
           }
         ]
@@ -363,62 +368,44 @@
       {
         "id": 7,
         "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelle est la valeur de result7 suite à cette instruction",
+        "code": "var result7 = null && 'Hello';",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "null",
             "isTrue": true
+          },
+          {
+            "title": "'Hello'"
           }
         ]
       },
       {
         "id": 8,
         "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Que renvoie sur la sortie de console le code suivant",
+        "code": "var function8 = function(){\n\tvar i = 0;\n\tvar iterator = function(){\n\t\ti++;\n\t};\n\titerator();\n\titerator();\n\treturn i;\n};\nconsole.log(function8());",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "2",
             "isTrue": true
+          },
+          {
+            "title": "0"
           }
         ]
       },
       {
         "id": 9,
         "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Que renvoie sur la sortie de console le code suivant",
+        "code": "var function8 = function(){\n\tvar i = 0;\n\tvar iterator = function(){\n\t\tvar i = 0;\n\t\ti++;\n\t};\n\titerator();\n\titerator();\n\treturn i;\n};\nconsole.log(function8());",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "2"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "0",
             "isTrue": true
           }
         ]
@@ -426,20 +413,126 @@
       {
         "id": 10,
         "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Dans le  « langage » des sélecteurs, que signifie",
+        "code": ".toto",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "les éléments ayant l’attribut « class » toto",
+            "isTrue": true
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "l’élément ayant l’attribut « id »  toto"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "les éléments ayant l’attribut « name »  toto"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "les éléments ayant l’attribut « toto »"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "level": "Expert",
+        "title": "Lors d’une requête Ajax, quelle est la plage de valeur d’une requête qui a aboutie en success",
+        "responses": [
+          {
+            "title": "<= 400"
+          },
+          {
+            "title": "0 - 200"
+          },
+          {
+            "title": "200 - 399",
+            "isTrue": true
+          },
+          {
+            "title": ">= 400"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "level": "Expert",
+        "title": "Quelle est la valeur de result12 suite à cette instruction ",
+        "code": "var result12 = [2,8,6,5,78,4,3].some(function(element){\n\treturn element < 5;\n});",
+        "responses": [
+          {
+            "code": "[2,4,3]"
+          },
+          {
+            "code": "[8,6,78]"
+          },
+          {
+            "code": "true",
+            "isTrue": true
+          },
+          {
+            "code": "false"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "level": "Expert",
+        "title": "Quelle définition du module ne provoque pas d’erreur lors de son invocation",
+        "code": "module13.init();",
+        "responses": [
+          {
+            "code": "var module13 = (function () {\n\treturn {\n\t\tinit: function () {\n\t\t\tconsole.log('Module 1 initialization');\n\t\t}\n\t}\n})();",
+            "isTrue": true
+          },
+          {
+            "code": "var module13 = (function () {\n\treturn {\n\t\tinit: function () {\n\t\t\tconsole.log('Module 1 initialization');\n\t\t}\n\t}\n});"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "level": "Expert",
+        "title": "Lesquelles de ces instructions ne provoquent pas d’erreur en supposant qu’elles sont exécutées indépendamment les unes des autres et à la suite du code suivant",
+        "code": "var module14 = (function () {\n\tvar service3 = function () {\n\t\tconsole.log('Service')\n\t};\n\treturn {\n\t\tservice1: service3,\n\t\tservice2: function () {\n\t\t\treturn service3();\n\t\t}\n\t}\n})();",
+        "responses": [
+          {
+            "title": "module14.service1();",
+            "isTrue": true
+          },
+          {
+            "title": "module14.service2();",
+            "isTrue": true
+          },
+          {
+            "title": "module14.service3();"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "level": "Expert",
+        "title": "Lesquelles de ces instructions retourne \"Harry Potter\" en supposant qu’elles sont exécutées indépendamment les unes des autres et à la suite du code suivant",
+        "code": "function Book(title) {\n\tvar self = this;\n\tvar toString2 = function () {\n\t\treturn this.title;\n\t};\n\tvar toString4 = function () {\n\t\treturn self.title;\n\t};\n\tvar toString5 = function (context) {\n\t\treturn context.title;\n\t};\n\tthis.title = title;\n\tthis.toString1 = function () {\n\t\treturn this.title;\n\t};\n\tthis.toString2 = toString2;\n\tthis.toString3 = function () {\n\t\treturn toString2();\n\t};\n\tthis.toString4 = function () {\n\t\treturn toString4();\n\t};\n\tthis.toString5 = function () {\n\t\treturn toString5(this);\n\t};\n}\nBook.prototype.toString6 = function () {\n\treturn this.title;\n};\nvar book1 = new Book('Harry Potter');",
+        "responses": [
+          {
+            "title": "book1.toString1();",
+            "isTrue": true
+          },
+          {
+            "title": "book1.toString2();",
+            "isTrue": true
+          },
+          {
+            "title": "book1.toString3();"
+          },
+          {
+            "title": "book1.toString4();",
+            "isTrue": true
+          },
+          {
+            "title": "book1.toString5();",
+            "isTrue": true
+          },
+          {
+            "title": "book1.toString6();",
             "isTrue": true
           }
         ]
@@ -459,41 +552,68 @@
       {
         "id": 1,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Qui est à l’initiative du framework AngularJS",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Facebook"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "Twitter"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "Yahoo"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "Google",
             "isTrue": true
+          },
+          {
+            "title": "Microsoft"
+          },
+          {
+            "title": "W3C"
+          },
+          {
+            "title": "Apache"
+          },
+          {
+            "title": "Mozilla"
           }
         ]
       },
       {
         "id": 2,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelles sont les directives inclus dans le module NG (Angular core)",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "ng-repeat",
+            "isTrue": true
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "ng-messages"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "ng-if",
+            "isTrue": true
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "ng-cloak",
+            "isTrue": true
+          },
+          {
+            "title": "ng-else"
+          },
+          {
+            "title": "ng-show",
+            "isTrue": true
+          },
+          {
+            "title": "ng-click",
+            "isTrue": true
+          },
+          {
+            "title": "ng-dbclick",
             "isTrue": true
           }
         ]
@@ -501,41 +621,72 @@
       {
         "id": 3,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelles sont les méthodes HTTP correctes",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "HEAD",
             "isTrue": true
+          },
+          {
+            "title": "POST",
+            "isTrue": true
+          },
+          {
+            "title": "GET",
+            "isTrue": true
+          },
+          {
+            "title": "DELETE",
+            "isTrue": true
+          },
+          {
+            "title": "REMOVE"
+          },
+          {
+            "title": "PUT",
+            "isTrue": true
+          },
+          {
+            "title": "SAVE"
+          },
+          {
+            "title": "UPDATE"
           }
         ]
       },
       {
         "id": 4,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Qu’est-ce qu’il ne faut pas faire dans le code d’un contrôleur AngularJS",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Manipuler le DOM",
+            "isTrue": true
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "Ecrire des algorithmes complexes",
+            "isTrue": true
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "Gérer le cycle de vie de plusieurs composants",
+            "isTrue": true
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "Initialiser la vues"
+          },
+          {
+            "title": "Insérer des données dans le $scope"
+          },
+          {
+            "title": "Ecrire du code transverse",
+            "isTrue": true
+          },
+          {
+            "title": "Filtrer / Transformer les entrées (données)",
+            "isTrue": true
+          },
+          {
+            "title": "Filtrer / Transformer les sorties (données)",
             "isTrue": true
           }
         ]
@@ -543,41 +694,71 @@
       {
         "id": 5,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Qu’est-ce que je peux utiliser comme règle de gestion dans un formulaire (HTML5 + AngularJS)",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "mandatory"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "email",
             "isTrue": true
+          },
+          {
+            "title": "url",
+            "isTrue": true
+          },
+          {
+            "title": "ng-minlength",
+            "isTrue": true
+          },
+          {
+            "title": "ng-maxlength",
+            "isTrue": true
+          },
+          {
+            "title": "ng-pattern",
+            "isTrue": true
+          },
+          {
+            "title": "ng-telephone"
+          },
+          {
+            "title": "ng-inferior"
           }
         ]
       },
       {
         "id": 6,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Lors de l’utilisation d’un ng-model, à quoi le contrôleur du ng-form nous donne accès",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "$clean"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "$fill"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "$invalid",
+            "isTrue": true
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "$valid",
+            "isTrue": true
+          },
+          {
+            "title": "$obsolete"
+          },
+          {
+            "title": "$error",
+            "isTrue": true
+          },
+          {
+            "title": "$dirty",
+            "isTrue": true
+          },
+          {
+            "title": "$pristine",
             "isTrue": true
           }
         ]
@@ -585,83 +766,313 @@
       {
         "id": 7,
         "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelles sont les méthodes accessibles dans le service $http",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "$http.get",
             "isTrue": true
+          },
+          {
+            "title": "$http.post",
+            "isTrue": true
+          },
+          {
+            "title": "$http.put",
+            "isTrue": true
+          },
+          {
+            "title": "$http.delete",
+            "isTrue": true
+          },
+          {
+            "title": "$http.remove"
+          },
+          {
+            "title": "$http.save"
+          },
+          {
+            "title": "$http.query"
+          },
+          {
+            "title": "$http.findAll"
           }
         ]
       },
       {
         "id": 8,
         "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelles sont les méthodes accessibles dans la ressource User si",
+        "code": "var User = $resource('http://my.api.com/user');",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "User.get",
             "isTrue": true
+          },
+          {
+            "title": "User.post"
+          },
+          {
+            "title": "User.put"
+          },
+          {
+            "title": "User.delete",
+            "isTrue": true
+          },
+          {
+            "title": "User.remove",
+            "isTrue": true
+          },
+          {
+            "title": "User.save",
+            "isTrue": true
+          },
+          {
+            "title": "User.query",
+            "isTrue": true
+          },
+          {
+            "title": "User.findAll"
           }
         ]
       },
       {
         "id": 9,
         "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quelles sont les implémentations dans AngularJS des « Services »",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "component"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "init"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "value",
             "isTrue": true
+          },
+          {
+            "title": "factory",
+            "isTrue": true
+          },
+          {
+            "title": "service",
+            "isTrue": true
+          },
+          {
+            "title": "provider",
+            "isTrue": true
+          },
+          {
+            "title": "constant",
+            "isTrue": true
+          },
+          {
+            "title": "run"
           }
         ]
       },
       {
         "id": 10,
         "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quels sont les « Services » qui sont configurables dans la phase de configuration d’AngularJS ",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "component"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "init"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "value"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "factory"
+          },
+          {
+            "title": "service"
+          },
+          {
+            "title": "provider",
+            "isTrue": true
+          },
+          {
+            "title": "constant",
+            "isTrue": true
+          },
+          {
+            "title": "run"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "level": "Expert",
+        "title": "Quel sont les attributs corrects dans la définition d’une directive",
+        "responses": [
+          {
+            "title": "link",
+            "isTrue": true
+          },
+          {
+            "title": "attributes"
+          },
+          {
+            "title": "templateUrl",
+            "isTrue": true
+          },
+          {
+            "title": "scope",
+            "isTrue": true
+          },
+          {
+            "title": "element"
+          },
+          {
+            "title": "controller",
+            "isTrue": true
+          },
+          {
+            "title": "target"
+          },
+          {
+            "title": "import"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "level": "Expert",
+        "title": "Comment puis-je activer la stratégie de double data-binding sur une variable entre la directive et le scope de la vue qui l’utilise",
+        "responses": [
+          {
+            "title": "nomDeLattribut : '@'"
+          },
+          {
+            "title": "nomDeLattribut : '&'"
+          },
+          {
+            "title": "nomDeLattribut : '='",
+            "isTrue": true
+          },
+          {
+            "title": "nomDeLattribut : '#'"
+          },
+          {
+            "title": "nomDeLattribut : '=nomDeLattribut'",
+            "isTrue": true
+          },
+          {
+            "title": "nomDeLattribut : '&nomDeLattribut'"
+          },
+          {
+            "title": "nomDeLattribut : '@nomDeLattribut'"
+          },
+          {
+            "title": "nomDeLattribut : '#nomDeLattribut'"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "level": "Expert",
+        "title": "À quoi peut servir un intercepteur AngularJS",
+        "responses": [
+          {
+            "title": "Tester si l’utilisateur est bien connecté avant d’envoyer la requête",
+            "isTrue": true
+          },
+          {
+            "title": "Intercepter toutes les requêtes http avant qu’elles partent vers le serveur",
+            "isTrue": true
+          },
+          {
+            "title": "Tester si l’utilisateur est français pour afficher la bonne langue"
+          },
+          {
+            "title": "Intercepter toutes les requêtes http après qu’elles reviennent du le serveur",
+            "isTrue": true
+          },
+          {
+            "title": "Intercepter toutes les requêtes http en erreur avant qu’elles partent",
+            "isTrue": true
+          },
+          {
+            "title": "Tester si il y a des erreurs dans le $exceptionHandler"
+          },
+          {
+            "title": "Tester si un login est unique pour un formulaire de création de compte"
+          },
+          {
+            "title": "Intercepter toutes les requêtes http qui reviennent du serveur en erreur",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "level": "Expert",
+        "title": "Quelles sont les fonctions liées à l’envoi et la réception d’évènements AngularJS ",
+        "responses": [
+          {
+            "title": "$emission"
+          },
+          {
+            "title": "$broadcast",
+            "isTrue": true
+          },
+          {
+            "title": "$emit",
+            "isTrue": true
+          },
+          {
+            "title": "$off"
+          },
+          {
+            "title": "$on",
+            "isTrue": true
+          },
+          {
+            "title": "$start"
+          },
+          {
+            "title": "$end"
+          },
+          {
+            "title": "$event"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "level": "Expert",
+        "title": "Quelles sont les méthodes que l’on peut invoquer lors de l’utilisation d’une promise",
+        "code": "var deferred  = $q.defer()",
+        "responses": [
+          {
+            "title": "deferred.info()"
+          },
+          {
+            "title": "deferred.terminate()"
+          },
+          {
+            "title": "deferred.resolve()",
+            "isTrue": true
+          },
+          {
+            "title": "deferred.finish()"
+          },
+          {
+            "title": "deferred.notify()",
+            "isTrue": true
+          },
+          {
+            "title": "deferred.error()"
+          },
+          {
+            "title": "deferred.success()"
+          },
+          {
+            "title": "deferred.reject()",
             "isTrue": true
           }
         ]
@@ -681,20 +1092,19 @@
       {
         "id": 1,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Pour spécifier que la valeur d’une variable ne peut changer, on la déclare comme une constante avec le mot réservé ",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "finalize"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "const"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "define"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "final",
             "isTrue": true
           }
         ]
@@ -702,189 +1112,395 @@
       {
         "id": 2,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quel mot clef indique qu’un attribut ne sera pas sérialisé",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "final"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "protected"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "transient",
             "isTrue": true
+          },
+          {
+            "title": "serializable"
           }
         ]
       },
       {
         "id": 3,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Cocher la ou les réponses correctes ",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Une classe peut implémenter plusieurs interfaces mais doit étendre une seule classe",
             "isTrue": true
+          },
+          {
+            "title": "Une classe peut implémenter plusieurs classes mais doit étendre une seule interface"
+          },
+          {
+            "title": "Une classe peut implémenter plusieurs classes et peut étendre plusieurs interfaces"
+          },
+          {
+            "title": "Une classe doit implémenter une seule interface et étendre une seule classe"
           }
         ]
       },
       {
         "id": 4,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Que donnera l’exécution du code suivant ",
+        "code": "public class Moteur {\n\tprivate String reference;\n\tpublic String getReference() {return this.reference;}\n\tpublic void setReference(String pReference) {this.reference = pReference;}\n}\npublic class Voiture {\n\tprivate Moteur moteur;\n\tpublic Moteur getMoteur() {return this.moteur;}\n\tpublic void setMoteur(Moteur pMoteur) {this.moteur = pMoteur;}\n}\nVoiture uneVoiture = new Voiture();\nMoteur unMoteur = new Moteur();\nuneVoiture.setMoteur(unMoteur);\nunMoteur.setReference(\"AREF-1853-6959-8458-1242\");\nSystem.out.println(\"Référence: \"+uneVoiture.getMoteur().getReference());",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Référence : null"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Référence : AREF-1853-6959-8458-1242",
             "isTrue": true
+          },
+          {
+            "title": "Référence : "
           }
         ]
       },
       {
         "id": 5,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quel est le résultat de l'expression suivante, où obj1 et obj2 sont deux objets de même type ayant les mêmes valeurs d'attributs",
+        "code": "(obj1==obj2)",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "true"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "false",
             "isTrue": true
           }
         ]
       },
       {
         "id": 6,
-        "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Comment gérer la concurrence d'accès sur une méthode",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Rajouter l’attribut abstracts"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "Rajouter l’attribut final"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Rajouter l’attribut synchronized",
             "isTrue": true
           }
         ]
       },
       {
         "id": 7,
-        "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "D'où seront accessibles les deux attributs suivants ",
+        "code": "protected int a;\nint b;",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "\"a\" sera accessible des classes dérivées (héritières) et des classes du même package. \"b\" ne sera accessible que des classes du même package",
             "isTrue": true
+          },
+          {
+            "title": "\"a\" sera accessible des classes dérivées (héritières). \"b\" sera accessible depuis toutes les autres classes"
+          },
+          {
+            "title": "\"a\" sera accessible des classes du même package. \"b\" sera accessible depuis toutes les autres classes"
           }
         ]
       },
       {
         "id": 8,
-        "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Que faut-il faire pour qu'un objet soit \"transportable\" sous forme d'un flux ",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Implémenter l'interface java.io.Serializable" ,
             "isTrue": true
+          },
+          {
+            "title": "Implémenter l'interface java.io.DataOutput"
+          },
+          {
+            "title": "Implémenter l'interface java.io.Externalizable"
           }
         ]
       },
       {
         "id": 9,
-        "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Quelles sont les différences entre \"java.util.Arraylist\" et \"java.util.Set\"",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "ArrayList est une interface alors que Set est une classe"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "Set est une collection d'éléments non ordonnés qui accepte les doublons alors que ArrayList est une collection d’élément ordonnés qui n’accepte pas les doublons"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Set est une collection d'éléments non ordonnés par défaut qui n'accepte pas les doublons alors que Arraylist hérite de l’interface List qui est une collection d'éléments ordonnés qui accepte les doublons",
             "isTrue": true
           }
         ]
       },
       {
         "id": 10,
-        "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Pour garder l'ordre d'insertion des clés, on doit utiliser la classe",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "TreeTable"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "HashTable"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "LinkedHashMap",
             "isTrue": true
+          },
+          {
+            "title": "LinkedHashSet"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "level": "Débutant",
+        "title": "Quelle interface doit-on implémenter pour faciliter le tri dans une liste",
+        "responses": [
+          {
+            "title": "Sortable"
+          },
+          {
+            "title": "Comparable",
+            "isTrue": true
+          },
+          {
+            "title": "Comparator"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "level": "Confirmé",
+        "title": "Pour empêcher une classe d’être étendue, on utilise la clause ",
+        "responses": [
+          {
+            "title": "static"
+          },
+          {
+            "title": "final",
+            "isTrue": true
+          },
+          {
+            "title": "volatile"
+          },
+          {
+            "title": "abstract"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "level": "Confirmé",
+        "title": "A quoi sert un Singleton en Java",
+        "responses": [
+          {
+            "title": "Rendre la classe finale et non étendue"
+          },
+          {
+            "title": "Impose à la classe de n’être instansiable qu’une seule fois",
+            "isTrue": true
+          },
+          {
+            "title": "Rendre la classe abstraite"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "level": "Confirmé",
+        "title": "Quelle est l’utilité d’une classe abstraite ",
+        "responses": [
+          {
+            "title": "Une classe qui possède au moins une méthode abstraite qui devra être implémentée dans chaque classe fille",
+            "isTrue": true
+          },
+          {
+            "title": "Une classe déclarée à l’intérieur d’une autre classe"
+          },
+          {
+            "title": "Une classe qui ne peut pas être instanciée"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "level": "Confirmé",
+        "title": "Que va afficher ce programme",
+        "code": "public class A {\n}\npublic class B extends A{\n}\npublic class Test {\npublic static void main(String[] args) {\n\tB b = new B(); \n\tA a = new A(); \n\tSystem.out.print(b instanceof A); \n\tSystem.out.print(b instanceof B); \n\tSystem.out.print(a instanceof A); \n\tSystem.out.print(a instanceof B); \n}}",
+        "responses": [
+          {
+            "title": "false false false false"
+          },
+          {
+            "title": "false false false true"
+          },
+          {
+            "title": "true true false true"
+          },
+          {
+            "title": "true true true false",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "level": "Confirmé",
+        "title": "Un \"garbage collector\"",
+        "responses": [
+          {
+            "title": "Alloue de la mémoire aux objets créés"
+          },
+          {
+            "title": "Supprime les objets non référencés",
+            "isTrue": true
+          },
+          {
+            "title": "Supprime les objets non référencés"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "level": "Débutant",
+        "title": "Avec Java 8 ",
+        "responses": [
+          {
+            "title": "Une classe implémentant une interface doit fournir une implémentation pour chaque méthode"
+          },
+          {
+            "title": "A chaque rajout d’une méthode à une interface, un refactoring est nécessaire"
+          },
+          {
+            "title": "Les interfaces peuvent fournir une implémentation pour leur méthode, ils peuvent contenir des méthodes static",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "level": "Débutant",
+        "title": "Quelles fonctionnalités ont été rajoutées à partir de java 8 ",
+        "responses": [
+          {
+            "title": "Lambda expression",
+            "isTrue": true
+          },
+          {
+            "title": "Compact profiles",
+            "isTrue": true
+          },
+          {
+            "title": "Stream API",
+            "isTrue": true
+          },
+          {
+            "title": "Only first two",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "level": "Confirmé",
+        "title": "Qu’est ce qu’une interface fonctionnelle ",
+        "responses": [
+          {
+            "title": "Interface disposant d’une unique méthode abstraite",
+            "isTrue": true
+          },
+          {
+            "title": "Interface disposant de plusieurs méthodes et parmis elles une seule méthode static"
+          },
+          {
+            "title": "Une interface possédant une seule méthode étant une redéfinition d'une méthode de la classe Object"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "level": "Débutant",
+        "title": "L’annotation @FunctionalInterface est utilisé dans le cas",
+        "responses": [
+          {
+            "title": "La classe implémentant une interface fonctionnelle"
+          },
+          {
+            "title": "L’interface fonctionnelle",
+            "isTrue": true
+          },
+          {
+            "title": "Une classe d’énumération"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "level": "Confirmé",
+        "title": "Quel est la signification de l’instruction suivante ",
+        "code": "(Student s) -> s.getAge() > 20",
+        "responses": [
+          {
+            "title": "Prend un paramètre et retourne un entier"
+          },
+          {
+            "title": "rend un paramètre et retourne un boolean",
+            "isTrue": true
+          },
+          {
+            "title": "rend un paramètre et retourne un objet Student"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "level": "Débutant",
+        "title": "Est ce que ses 2 instructions sont identiques",
+        "code": "Function<Integer, String> toString = n -> String.valueOf(n);\nFunction<Integer, String> toString = String::valueOf;",
+        "responses": [
+          {
+            "title": "Vrai",
+            "isTrue": true
+          },
+          {
+            "title": "Faux"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "level": "Expert",
+        "title": "Api Streams, permet",
+        "responses": [
+          {
+            "title": "De manipuler des collections de données de manière déclarative, d’enchaîner les traitements et de charger les données à la demande",
+            "isTrue": true
+          },
+          {
+            "title": "Le chargement de toutes les données en mémoire"
+          },
+          {
+            "title": "D'encapsuler des traitements métiers, de stocker et d’accéder à des données"
           }
         ]
       }
@@ -903,20 +1519,19 @@
       {
         "id": 1,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Pour qu'un attribut soit instancié avec un bean on doit utiliser l'annotation",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "@Authowired"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "@Value"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "@Controller"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "@Resource",
             "isTrue": true
           }
         ]
@@ -924,20 +1539,19 @@
       {
         "id": 2,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Quel est le scope par défaut d'un bean Spring",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Session"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "Singleton"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "Prototype"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "Spring",
             "isTrue": true
           }
         ]
@@ -945,168 +1559,198 @@
       {
         "id": 3,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Spring facilite le développement des DAO de la couche de persistance en utilisant JDBC, JPA, JDO ou une solution open source comme Hibernate, iBatis, et une hiérarchie d'exceptions ",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Vrai",
             "isTrue": true
+          },
+          {
+            "title": "Faux"
           }
         ]
       },
       {
         "id": 4,
-        "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Dans une application Web, la présence d'un Listener de type ContextLoaderListener dans le fichier web.xml comme suit signifie",
+        "code": "<context-param>\n\t<param-name>contextConfigLocation</param-name>\n\t<param-value>/WEB-INF/daoContext.xml /WEB-INF/servicesContext.xml /WEB-INF/applicationContext.xml</param-value>\n</context-param>\n<listener>\n\t<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>\n</listener>",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Que ContextLoaderListener est utilisée pour changer le ou les fichiers de configuration de l’application web définis dans ContextConfigLocation et que l’application Web est informée de tout changement dans le ou les fichiers de configuration Spring",
             "isTrue": true
+          },
+          {
+            "title": "Que Spring va instancier un WebApplicationContext sur la base par défaut du fichier WEB-INF/applicationContext.xml"
+          },
+          {
+            "title": "Qu’un objet de type WebApplicationContext est injecté dans toute servlet page JSP de l’application web."
           }
         ]
       },
       {
         "id": 5,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "La balise @Resource ",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Permet un autowiring byName ou byType sans intervenir dans le fichier de configuration (annotation-config excepté)",
             "isTrue": true
+          },
+          {
+            "title": "Complète les balises @autowired et @inject qui ne sauraient fonctionner seules"
+          },
+          {
+            "title": "De faire instancier par Spring des classes par simple présence de cette annotation dans le code"
           }
         ]
       },
       {
         "id": 6,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Lorsque deux demandes sont faites",
+        "code": "<bean id=\"monBean1\" class=\"com.developpez.spring.MonBean1\" scope=\"singleton\"/></bean>\n<bean id=\"monBean2\" class=\"com.developpez.spring.MonBean2\" scope=\"prototype\"/></bean>",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "C'est la même instance de l'objet monBean1 qui est fournie par le BeanFactory/ApplicationContext. Alors que mon monBean2 est instancié à chaque demande",
             "isTrue": true
+          },
+          {
+            "title": "C'est la même instance de l’objet monBean2 qui est fournie par le Beanfactory/ApplicationContext. Alors que monBean1 est instancié à chaque demande."
+          },
+          {
+            "title": "monBean1 et monBean2 sont instanciés pour chaque demande"
           }
         ]
       },
       {
         "id": 7,
-        "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Avec Spring MVC, vous devez créer vous-même vos Contolleurs (contrairement à Struts, ou il n’ya qu’un controleur : l’actionServlet.",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Vrai",
             "isTrue": true
+          },
+          {
+            "title": "Faux"
           }
         ]
       },
       {
         "id": 8,
-        "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Quelle classe implémente le contexte Spring",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "classPathXMLApplicationContext"
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "DefautListableBeanFactory"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
+            "title": "BeanXMLFactory"
           },
           {
-            "title": "la balise <il> n'existe pas",
+            "title": "RessourceLoaderContext",
             "isTrue": true
           }
         ]
       },
       {
         "id": 9,
-        "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Pour gérer les transactions de base de données, il faut ",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Un transaction manager",
             "isTrue": true
+          },
+          {
+            "title": "Utiliser l’annotation @Dbtransaction"
           }
         ]
       },
       {
         "id": 10,
-        "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Quels patterns Spring Core permet-il de mettre en place",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "IOC",
             "isTrue": true
+          },
+          {
+            "title": "MVC"
+          },
+          {
+            "title": "Dependency injection"
+          },
+          {
+            "title": "Service locator"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "level": "Débutant",
+        "title": "Quelles sont les différentes manières d’injecter un bean",
+        "responses": [
+          {
+            "title": "Avec le tag <property>",
+            "isTrue": true
+          },
+          {
+            "title": "Avec l’annotation @Injector"
+          },
+          {
+            "title": "Avec l’annotation @Autowired",
+            "isTrue": true
+          },
+          {
+            "title": "Avec le tag <constructor>"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "level": "Confirmé",
+        "title": "Comment intégrer Spring et Hibernate",
+        "responses": [
+          {
+            "title": "En déclarant une session et en l’injectant aux DAO"
+          },
+          {
+            "title": "En déclarant une session factory et en l’injectant aux DAO",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "level": "Confirmé",
+        "title": "Le mécanisme de transaction est implémenté",
+        "responses": [
+          {
+            "title": "Par template pattern"
+          },
+          {
+            "title": "Par AOP",
+            "isTrue": true
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "level": "Confirmé",
+        "title": "A quoi sert un serveur Apache, a quoi est-il dédié dans une architecture web",
+        "responses": [
+          {
+            "title": "Apache permet d'ouvrir les connexions http, de servir les pages statiques (html et images), de décharger le serveur d'application",
+            "isTrue": true
+          },
+          {
+            "title": "Apache est un serveur web pour exécuter les parties servlets et JSP des applications déployées sur le serveur"
           }
         ]
       }
@@ -1125,62 +1769,49 @@
       {
         "id": 1,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Lesquels sont un Framework ou une norme de mapping objet relationnel",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Hibernate",
             "isTrue": true
+          },
+          {
+            "title": "JPA",
+            "isTrue": true
+          },
+          {
+            "title": "Spring"
           }
         ]
       },
       {
         "id": 2,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Dans Hibernate, de quelles manières peut être réalisé le mapping",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Avec un fichier xml",
+            "isTrue": true
           },
           {
-            "title": "il ny a pas d'erreur"
+            "title": "Avec un fichier properties"
           },
           {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Par annotation",
             "isTrue": true
           }
         ]
       },
       {
         "id": 3,
-        "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Dans Hibernate, comment réattacher un objet",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Avec la méthode attach"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Avec la méthode update de la session",
             "isTrue": true
           }
         ]
@@ -1188,146 +1819,50 @@
       {
         "id": 4,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Dans Hibernate, comment crée-t-on une session",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "A partir d’un session bean",
             "isTrue": true
+          },
+          {
+            "title": "A partir d’une session factory"
+          },
+          {
+            "title": "A partir d’un session manager"
+          },
+          {
+            "title": "A partir d’un session builder"
           }
         ]
       },
       {
         "id": 5,
         "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "title": "Qu'est-ce qu'une session Hibernate",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Juste une connexion à la base de données",
             "isTrue": true
+          },
+          {
+            "title": "Un cache d’objet"
+          },
+          {
+            "title": "Ce qui effectue les opérations dans la base de données"
           }
         ]
       },
       {
         "id": 6,
-        "level": "Débutant",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
+        "level": "Confirmé",
+        "title": "Dans Hibernate, si les attributs d’un objet attaché à la session sont modifiés, est-il nécessaire d'appeler la méthode update de la session",
         "responses": [
           {
-            "title": "il faut numéroter chaque objet de la liste"
+            "title": "Oui"
           },
           {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
-            "isTrue": true
-          }
-        ]
-      },
-      {
-        "id": 7,
-        "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
-        "responses": [
-          {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
-            "isTrue": true
-          }
-        ]
-      },
-      {
-        "id": 8,
-        "level": "Intermédiaire",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
-        "responses": [
-          {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
-            "isTrue": true
-          }
-        ]
-      },
-      {
-        "id": 9,
-        "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
-        "responses": [
-          {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
-            "isTrue": true
-          }
-        ]
-      },
-      {
-        "id": 10,
-        "level": "Expert",
-        "title": "Quelle est l'erreur dans le code suivant",
-        "code": "<ul>\n\t<il></il>\n\t<il></il>\n\t<il></il>\n</ul>",
-        "responses": [
-          {
-            "title": "il faut numéroter chaque objet de la liste"
-          },
-          {
-            "title": "il ny a pas d'erreur"
-          },
-          {
-            "title": "la balise <ul> n'a pas besoin d'être fermée"
-          },
-          {
-            "title": "la balise <il> n'existe pas",
+            "title": "Non",
             "isTrue": true
           }
         ]

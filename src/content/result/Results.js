@@ -7,6 +7,8 @@ import Result from './../../components/result/Result';
 
 import ResultService from './../../services/ResultService';
 
+import LoginService from '../../services/LoginService';
+
 import './Results.css';
 
 
@@ -19,22 +21,21 @@ class Results extends Component {
             results: props.value || [],
             legends: ResultService.getLegends(),
             resultsTheme: results.theme,
-            resultsLevel: results.level
+            resultsLevel: results.level,
+            login : LoginService.getLogin()
         };
         this.legends = ResultService.getLegends();
     }
 
     componentDidMount(){
-        //ResultService.query().then(function(results){
-        //    this.setState({results: results});
-        //}.bind(this));
+
     }
 
     render() {
         return (
-            <div className="row ">
-                <div className="flex"></div>
+            <div className="row">
                 <div className="column">
+                    <h1>{this.state.login}</h1>
                     <div className="row justifyCenter">
                         {
                             this.state.resultsTheme.map((result, index) =>
@@ -42,7 +43,7 @@ class Results extends Component {
                             )
                         }
                     </div>
-                    <List className="row">
+                    <List className="row legend">
                         {
                             this.legends.map((item, index) =>
                                 <ListItem
@@ -55,7 +56,6 @@ class Results extends Component {
                             )}
                     </List>
                 </div>
-                <div className="flex"></div>
             </div>
         );
     }

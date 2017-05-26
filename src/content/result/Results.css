@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+}
+.row.legend{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 950px) {
+    .row.legend{
+        width: calc(100vw - 20px);
+        flex-direction: column;
+    }
+}

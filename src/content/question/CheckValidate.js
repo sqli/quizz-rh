@@ -8,6 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import TextField from "material-ui/TextField"
 import { browserHistory } from 'react-router';
 import './CheckValidate.css';
+import {config} from '../../config.js';
 
 
 /**
@@ -23,8 +24,7 @@ export default class CheckValidate extends Component {
         this.handleLogin =  this.handleLogin.bind(this);
         this.state = {
             open: true,
-            password: '',
-            test: 'test',
+            password: ''
         };
     }
 
@@ -36,7 +36,7 @@ export default class CheckValidate extends Component {
         this.setState({password: e.target.value});
     };
     handleLogin() {
-        if(this.state.password === this.state.test){
+        if(this.state.password === config.rhLogin){
             browserHistory.push('/result');
         }
     }

@@ -1,5 +1,6 @@
 {
   "apiPrefix": "http://localhost:7171/api",
-  "nbQuestionsMinToStart": 4,
-  "timePerQuestion": 60
+  "nbQuestionsMinToStart": 10,
+  "timePerQuestion": 60,
+  "rhLogin": "rhtlse"
 }

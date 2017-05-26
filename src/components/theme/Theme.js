@@ -57,6 +57,7 @@ class Theme extends Component {
                     />
                 <CardTitle title={this.theme.questions.length + ' Questions'} />
                 <CardHeader
+                    title="Référent SQLI"
                     subtitle={this.theme.referent.firstName + ' ' + this.theme.referent.lastName}
                     avatar={this.theme.referent.avatar}
                     />
