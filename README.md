@@ -7,8 +7,9 @@
 
 ## Getting started
     - git clone git@gitlab-toulouse.sqli.com:comite-technique/rh-quizz.git
-    - cd gl-pages-manager
+    - cd rh-quizz
     - npm install
+    - npm install -g glup
     - npm start
 
 ## Build and deploy
