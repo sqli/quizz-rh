@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { browserHistory } from 'react-router';
+import {browserHistory} from 'react-router';
 
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
@@ -17,30 +17,33 @@ import './Themes.css';
 
 class Themes extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.handleThemeChange = this.handleThemeChange.bind(this);
+
+        //état de départ:
         this.state = {
             themes: [],
+
             nbQuestionsIntoBasket: ThemeService.nbQuestionsIntoBasket(),
             isEnoughToStart: ThemeService.isEnoughToStart()
         };
     }
 
-    componentDidMount(){
-        ThemeService.query().then(function(themes){
-            this.setState({themes: themes});
+    componentDidMount() {
+        ThemeService.query().then(function (themes) {
+            this.setState({themes: themes._embedded.theme});// Chargement des themes à partir du service REST
         }.bind(this));
     }
 
-    start(){
+    start() {
         ThemeService.setSelectedThemes(ThemeService.getBasket());
         LocalStorageService.setItem('stepIndex', 1);
         QuestionService.addQuestion(ThemeService.getSelectedQuestions());
         browserHistory.push('/question/1');
     }
 
-    handleThemeChange(){
+    handleThemeChange() {
         this.setState({
             nbQuestionsIntoBasket: ThemeService.nbQuestionsIntoBasket(),
             isEnoughToStart: ThemeService.isEnoughToStart()
@@ -53,20 +56,22 @@ class Themes extends Component {
                 <div className="content-with-paper">
                     <div>
                         <Badge className="themes-badge"
-                            badgeContent={this.state.nbQuestionsIntoBasket}
-                            primary={this.state.isEnoughToStart}
-                            secondary={!this.state.isEnoughToStart}
-                            badgeStyle={{'marginTop':'1em'}}
-                            >
+                               badgeContent={this.state.nbQuestionsIntoBasket}
+                               primary={this.state.isEnoughToStart}
+                               secondary={!this.state.isEnoughToStart}
+                               badgeStyle={{'marginTop': '1em'}}
+                        >
                             <NotificationsIcon />
                         </Badge>
                         <p className="themes-paragraphe">
-                            Vous devez sélectionner des thèmes de questions pour arriver à un minimum de <strong>{ThemeService.getNbQuestionsMinToStart()}</strong> questions afin de pouvoir démarrer le test.
+                            Vous devez sélectionner des thèmes de questions pour arriver à un minimum de
+                            <strong>{ThemeService.getNbQuestionsMinToStart()}</strong> questions afin de pouvoir
+                            démarrer le test.
                         </p>
-                        </div>
+                    </div>
                     <ul className="Themes">
-                        {this.state.themes.map(theme =>
-                                <Theme key={theme.id} value={theme} onChange={this.handleThemeChange}/>
+                        {this.state.themes.map( (theme, count) =>
+                            <Theme key={count} value={theme} onChange={this.handleThemeChange}/>
                         )}
                     </ul>
                 </div>
@@ -77,7 +82,7 @@ class Themes extends Component {
                             label="Demarrer"
                             icon={<IconStart />}
                             onTouchTap={() => this.start()}
-                            />
+                        />
                     </BottomNavigation>
                 </Paper>
             </div>

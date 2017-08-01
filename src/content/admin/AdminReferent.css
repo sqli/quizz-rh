@@ -1,0 +1,43 @@
+.formReferent {
+    margin-top: 50px;
+}
+
+.formCardReferent {
+
+    margin: auto;
+    display: block;
+    text-align: center;
+    text-align-all: left;
+    min-width: 400px;
+    max-width: 50%;
+}
+
+.formReferent .formCardReferent .textInputReferent {
+
+    width: 70%;
+    margin: auto;
+}
+
+.formReferent .formCardReferent .submitReferent {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 70%;
+    margin-left: 115px;
+    margin-right: auto;
+    text-align: left;
+
+}
+
+.formCardReferent .cardHeaderReferent {
+    text-align: left;
+
+}
+
+.formReferent .formCardReferent .submitReferent {
+    display: inline-block;
+    width: 100%;
+
+}
+
+
+

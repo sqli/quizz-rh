@@ -2,5 +2,6 @@
   "apiPrefix": "localhost",
   "nbQuestionsMinToStart": 20,
   "timePerQuestion": 60,
-  "rhLogin": "rhtlse"
+  "rhLogin": "rhtlse",
+  "adminLogin": "adminConnexion"
 }

@@ -1,0 +1,11 @@
+.Referent {
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+    min-width: 293px;
+    max-width: 293px;
+}
+
+.Referent.active {
+    background-color: rgba(0, 188, 212, 0.21) !important;
+}

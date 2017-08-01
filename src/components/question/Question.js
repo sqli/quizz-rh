@@ -13,9 +13,11 @@ class Question extends Component {
 
     constructor(props) {
         super(props);
-        this.index = props.params.id - 1;
+        //this.index = props.params.id - 1;
         this.state = {
-            question: null
+            question: null,
+
+
         };
     }
 
@@ -32,7 +34,7 @@ class Question extends Component {
 
 
     componentWillReceiveProps(nextProps) {
-        this.index = nextProps.params.id - 1;
+       // this.index = nextProps.params.id - 1;
         const question = nextProps.question;
         this.setState({
             question: question
@@ -42,7 +44,7 @@ class Question extends Component {
 
     handleCheck(index, event, checked) {
         let question = this.state.question;
-        question.responses[index].checked = checked;
+        question.reponses[index].checked = checked;
         this.setState({
             question: question
         });
@@ -54,8 +56,8 @@ class Question extends Component {
                 <Card style={{boxShadow: 'none'}}>
                     <CardHeader
                         title={this.state.question.theme.name}
-                        subtitle={'Question '+ this.state.question.id}
-                        avatar={this.state.question.theme.logo}
+                        subtitle={'Question '+ this.state.question.questionNumber}
+                    avatar={this.state.question.theme.logo}
                     />
                     <CardTitle title={this.state.question.title + ' :'} />
                     <CardMedia>
@@ -71,12 +73,12 @@ class Question extends Component {
                     </CardMedia>
                     <CardText>
                         {
-                            this.state.question.responses.map((response, index) =>
-                                <div>
+                            this.state.question.reponses.map((response, index) =>
+                                <div key={index}>
                                     <Checkbox
                                         onCheck={this.handleCheck.bind(this, index)}
-                                        key={index}
-                                        label={response.title}
+                                        label={response.text}
+
                                         checked={response.checked || false}
                                     />
                                     {

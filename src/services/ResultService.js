@@ -65,7 +65,7 @@ class ResultService {
             var trueAnswerChecked = 0;
             var falseAnswerChecked = 0;
 
-            question.responses.forEach(function (answer) {
+            question.reponses.forEach(function (answer) {
                 if (answer.isTrue) {
                     trueAnswerCount++;
                 }

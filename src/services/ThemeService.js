@@ -1,4 +1,4 @@
-import {Theme} from '../resource/index';
+import {Theme, Referent} from '../resource/index';
 import LocalStorageService from './LocalStorageService';
 
 import {config} from '../config.js';
@@ -8,55 +8,56 @@ class ThemeService {
     basket = [];
     selectedThemes = [];
 
-    addThemeIntoBasket(theme){
+
+    addThemeIntoBasket(theme) {
         this.basket.push(theme);
     }
 
-    removeThemeFromBasket(theme){
-        if(this.themeIsIntoBasket(theme)){
+    removeThemeFromBasket(theme) {
+        if (this.themeIsIntoBasket(theme)) {
             let index = this.basket.indexOf(theme);
             this.basket.splice(index, 1);
         }
     }
 
-    themeIsIntoBasket(theme){
+    themeIsIntoBasket(theme) {
         return this.basket.indexOf(theme) !== -1;
     }
 
-    nbQuestionsIntoBasket(){
-        return this.basket.reduce(function(previous, item){
+    nbQuestionsIntoBasket() {
+        return this.basket.reduce(function (previous, item) {
             return previous + item.questions.length;
         }, 0);
     }
 
-    isEnoughToStart(){
+    isEnoughToStart() {
         return this.nbQuestionsIntoBasket() >= this.getNbQuestionsMinToStart();
     }
 
-    getNbQuestionsMinToStart(){
+    getNbQuestionsMinToStart() {
         return config.nbQuestionsMinToStart;
     }
 
-    getBasket(){
+    getBasket() {
         return this.basket;
     }
 
-    setSelectedThemes(themes){
+    setSelectedThemes(themes) {
         LocalStorageService.setItem('selectedThemes', themes);
         this.selectedThemes = themes;
     }
 
-    getSelectedThemes(){
-        if(this.selectedThemes.length === 0){
+    getSelectedThemes() {
+        if (this.selectedThemes.length === 0) {
             this.selectedThemes = LocalStorageService.getItem('selectedThemes')
         }
         return this.selectedThemes;
     }
 
-    getSelectedQuestions(){
+    getSelectedQuestions() {
         var questions = [];
-        this.basket.forEach(function(theme){
-            theme.questions.forEach(function(question){
+        this.basket.forEach(function (theme) {
+            theme.questions.forEach(function (question) {
                 questions.push({
                     id: question.id,
                     theme: {
@@ -65,15 +66,54 @@ class ThemeService {
                         logo: theme.logo
 
                     },
+                    questionNumber: question.questionNumber,
                     level: question.level,
                     title: question.title,
                     code: question.code,
-                    responses: question.responses
+                    reponses: question.reponses
                 });
             });
         });
         this.basket = [];
         return questions;
+    }
+
+    // creation d 'un fonction pour récupérer  le lien correspondant au référent du thème
+    getReferent(theme) {
+        return Theme.follow_link(theme._links.referent.href);
+    }
+
+    // création d 'une fonction qui permet de récupérer le lien correspondant aux questions du thème
+    getQuestions(theme) {
+        return Theme.follow_link(theme._links.questions.href);
+    }
+
+    //fonction for create a new theme with an associating Referent in MongoDB
+    save(theme) {
+        Theme.save({...theme, referent: Referent.cleanEndpoint(theme.selectedReferent)});
+    }
+
+    //fonction for create a new theme
+    create(theme) {
+        Theme.save({name: theme.name, logo: theme.logo});
+    }
+
+    getId(theme) {
+        return Theme.cleanId(theme._links.self.href);
+    }
+
+    get(id) {
+        let theme = Theme.get(id);
+        theme.id = id;
+        return theme;
+    }
+
+    update(theme) {
+        if (theme.selectedReferent) {
+            Theme.update({...theme, referent: Referent.cleanEndpoint(theme.selectedReferent)})
+        } else {
+            Theme.update(theme)
+        }
     }
 
     query = () => {

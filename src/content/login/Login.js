@@ -47,6 +47,7 @@ class Login extends Component {
         return (
             <form className="Login" onSubmit={this.submit}>
                 <TextField
+                    id="loginRH"
                     value={this.state.login}
                     onChange={this.handleChange}
                     floatingLabelText="Entrez votre nom prénom"
