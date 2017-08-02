@@ -37,6 +37,15 @@ class AdminTheme extends Component {
             themes: [],
             name: '',
             logo: '',
+            questions:[],
+            question:{
+              questionNumber:'',
+                level:'',
+                title:'',
+                code:'',
+                reponses:[]
+            },
+
             snackbar: {
                 open: false,
                 message: ''
@@ -100,6 +109,7 @@ class AdminTheme extends Component {
 
 
     handleSubmit(event) {
+
         ThemeService.create(this.state);
         this.updateThemes();
         this.setState({

@@ -25,7 +25,7 @@ class Theme extends Component {
                 lastName: "",
                 avatar: ""
             },
-            questions: [],
+           // questions: [],
             snackbar: {
                 open: false,
                 message: ''
@@ -41,12 +41,12 @@ class Theme extends Component {
             });// Chargement du referent  à partir du service REST
         }.bind(this));
 
-        ThemeService.getQuestions(this.theme).then(function (questions) {
+       /* ThemeService.getQuestions(this.theme).then(function (questions) {
             this.theme.questions = questions._embedded.question;
             this.setState({
                 questions: questions._embedded.question
             });// Chargement des questions  à partir du service REST
-        }.bind(this));
+        }.bind(this));*/
     }
 
     handleRemove = () => {
@@ -81,7 +81,7 @@ class Theme extends Component {
                     titleStyle={{'lineHeight': '2.8em'}}
                     avatar={this.theme.logo}
                 />
-                <CardTitle title={ this.state.questions.length + ' Questions'}/>
+                <CardTitle title={  this.theme.questions?this.theme.questions.length + ' Questions': this.theme.questions + 'Aucune question'}/>
                 <CardHeader
                     title="Référent SQLI : "
                     subtitle={this.state.referent.firstName + ' ' + this.state.referent.lastName}

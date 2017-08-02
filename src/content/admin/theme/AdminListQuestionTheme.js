@@ -13,40 +13,47 @@ class AdminListQuestionTheme extends Component {
 
     constructor(props) {
         super(props);
-
-         this.state = {}
+        this.onClickButton = this.onClickButton.bind(this);
+        this.state = {}
     }
 
     componentDidMount() {
 
     }
 
+
+
+    onClickButton() {
+        this.props.onQuestionModified("Nellie")
+    }
+
     render() {
         return (
             <div className="formCardQuestionChoixTheme">
+                <div onClick={() => { this.props.onQuestionModified("Nellie")}}>bouton</div>
+                <div onClick={this.onClickButton}>bouton 2</div>
+                {this.props.questions && this.props.questions.map((question, count) =>
+                    <div className="cardQuestionTheme" key={count} value={question}>
+                        <Card >
+                            <CardTitle title={"Question n°" + question.questionNumber}/>
+                            <CardHeader title={question.title}/>
+                            <CardHeader title={question.code}/>
+                            <FlatButton
+                                label="Modifier"
+                                primary={true}
+                                onClick={() => { this.props.onQuestionModified(this.props.question)}}
+                                icon={<IconModeEdit />}
+                            />
+                            <FlatButton
+                                label="Supprimer"
+                                secondary={true}
+                                icon={<DeleteForever />}
+                                onClick={() => { this.props.onDeletedQuestion(this.props.question)}}
+                            />
 
-
-                    {this.props.questions.map((question, count) =>
-                        <div className="cardQuestionTheme">
-                            <Card >
-                                <CardTitle title={"Question n°" + ' ' + question.questionNumber} key={count} value={question}/>
-                                <CardHeader title={question.title}/>
-                                <CardHeader title={question.code}/>
-                                <FlatButton
-                                    label="Modifier"
-                                    primary={true}
-                                    icon={<IconModeEdit />}
-                                    />
-                                <FlatButton
-                                    label="Supprimer"
-                                    secondary={true}
-                                    icon={<DeleteForever />}
-                                    />
-
-                            </Card>
-                        </div>
-
-                    )}
+                        </Card>
+                    </div>
+                )}
             </div>
         );
     }

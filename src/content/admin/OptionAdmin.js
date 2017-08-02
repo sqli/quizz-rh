@@ -21,8 +21,8 @@ class OptionAdmin extends Component {
     }
     //this fonction for call admin Question page
     adminQuestion = () => {
-        browserHistory.push('/adminQuestion');
-    }
+    browserHistory.push('/adminQuestion');
+}
 
     render() {
         return (

@@ -22,7 +22,6 @@ public class Theme
     //permet de faire reference a un objet de type référent(relation)
     @DBRef
     private Referent referent;
-    @DBRef
     private List<Question> questions;
 
 

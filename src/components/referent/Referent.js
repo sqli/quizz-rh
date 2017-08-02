@@ -63,7 +63,7 @@ class Referent extends Component {
 
                     <FlatButton
                         label="Modifier"
-                        onTouchTap={this.handleUpdate}
+                        onClick={() => { this.props.onReferentModified(this.props.referent)}}
                         primary={true}
                         icon={<IconModeEdit />}/>
                     <FlatButton

@@ -34,8 +34,10 @@ ReactDOM.render(
             <Route path="option" component={OptionAdmin}/>
             <Route path="adminTheme" component={AdminTheme}/>
             <Route path="adminModifTheme/:id" component={AdminModifTheme}/>
+            <Route path="adminQuestion" component={AdminQuestion}/>
             <Route path="adminQuestion/:id" component={AdminQuestion}/>
             <Route path="adminReferent" component={AdminReferent}/>
+            <Route path="adminReferent/:id" component={AdminReferent}/>
 
 
             <Route path="*" component={Login}/>

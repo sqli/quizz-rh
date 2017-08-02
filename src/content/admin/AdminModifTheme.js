@@ -27,11 +27,15 @@ class AdminModifTheme extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReferentClick = this.handleReferentClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleQuestionsModified = this.handleQuestionsModified.bind(this);
+        this.handleReferentModified = this.handleReferentModified.bind(this);
+        this.handleDeletedQuestion = this.handleDeletedQuestion.bind(this);
+
+
 
         this.state = {
             theme: {},
             referents: [],
-            questions: [],
         }
     }
 
@@ -46,17 +50,7 @@ class AdminModifTheme extends Component {
                 this.setState({
                     theme: theme
                 });
-
-                //get the question's theme
-                ThemeService.getQuestions(this.state.theme).then(function (questions) {
-                    questions._embedded.question.map(question => {
-                        question.theme = this.state.theme;
-                        return question;
-                    })
-                    this.setState({questions: questions._embedded.question});// Chargement des questions à partir du service REST
-                }.bind(this));
-
-                //get theme's referents
+                 //get theme's referents
                 //if the theme clicked has got a referent this function get all the existing referent and show with a css color
                 //who is the theme's referent
                 ThemeService.getReferent(this.state.theme).then(function (myReferent) {
@@ -128,6 +122,22 @@ class AdminModifTheme extends Component {
         });
     }
 
+   /* handleQuestionsModified(nom) {
+        console.log("coucou " + nom);
+    }
+*/
+    handleReferentModified(referent) {
+        browserHistory.push('/adminReferent/'+ ThemeService.getId(this.state.theme));
+    }
+
+    handleQuestionsModified(question) {
+        browserHistory.push('/adminQuestion/'+ ThemeService.getId(this.state.theme));
+    }
+
+    handleDeletedQuestion(question){
+        //ThemeService.delete(this.state.theme.question);
+
+    }
 
     render() {
         return (
@@ -175,7 +185,7 @@ class AdminModifTheme extends Component {
                         <CardHeader className="cardHeaderQuestionTheme">
                             Listes des questions de votre theme:
                         </CardHeader>
-                        <AdminListQuestionTheme questions={this.state.theme.questions}></AdminListQuestionTheme>
+                        <AdminListQuestionTheme questions={this.state.theme.questions} onQuestionModified={this.handleQuestionsModified} onDeletedQuestion={this.handleDeletedQuestion}></AdminListQuestionTheme>
                         <div className="CreerQuestion">
                             <label>Ajouter une nouvelle Question :</label>
                             <br/>
@@ -194,7 +204,7 @@ class AdminModifTheme extends Component {
                         {this.state.referents.map((referent, count) =>
 
                             <Referent active={referent.active} handler={this.handleRefresh} key={count} value={referent}
-                                      onClick={event => this.handleReferentClick(referent)}/>,
+                                      onClick={event => this.handleReferentClick(referent)} onReferentModified={this.handleReferentModified}/>,
                         )}
                         <div className="creerReferent">
                             <label>creer un référent :</label>
