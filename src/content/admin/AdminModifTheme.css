@@ -35,7 +35,7 @@
     margin-top: 1em;
 }
 
-.adminModifTheme .listQuestionTheme {
+.adminModifTheme .listQuestionTheme .CardQuestionTheme{
     display: block;
     min-width: 50%;
     margin-right:20px;
@@ -45,7 +45,9 @@
 }
 .adminModifTheme .listQuestionTheme .CreerQuestion
 {
-    text-align: center;
+    display: inline-block;
+    width: 30%;
+    margin: auto;
     padding-bottom: 12px;
 }
 

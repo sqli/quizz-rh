@@ -63,7 +63,7 @@ class Referent extends Component {
 
                     <FlatButton
                         label="Modifier"
-                        onClick={() => { this.props.onReferentModified(this.props.referent)}}
+                        onClick={() => { this.props.onReferentModified(this.state.referent)}}
                         primary={true}
                         icon={<IconModeEdit />}/>
                     <FlatButton

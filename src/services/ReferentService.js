@@ -30,7 +30,7 @@ class ReferentService {
 
     //function for Update an existing référent in MongoDB
     update(referent){
-
+        Referent.update(referent)
     }
 
 

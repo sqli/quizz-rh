@@ -32,10 +32,14 @@ class AdminModifTheme extends Component {
         this.handleDeletedQuestion = this.handleDeletedQuestion.bind(this);
 
 
-
         this.state = {
             theme: {},
             referents: [],
+
+            snackbar: {
+                open: false,
+                message: ''
+            }
         }
     }
 
@@ -50,7 +54,12 @@ class AdminModifTheme extends Component {
                 this.setState({
                     theme: theme
                 });
-                 //get theme's referents
+
+                //on recupere le numero de la question dans l'url et on exerce un filtre dans la mise a jour pour trouver la premiere question correspondant à ce critère
+                if (this.props.params.numQuestion) {
+                    this.setState({question: theme.questions.filter(question => question.questionNumber == this.props.params.numQuestion)[0]})
+                }
+                //get theme's referents
                 //if the theme clicked has got a referent this function get all the existing referent and show with a css color
                 //who is the theme's referent
                 ThemeService.getReferent(this.state.theme).then(function (myReferent) {
@@ -107,11 +116,12 @@ class AdminModifTheme extends Component {
     adminReferent = () => {
         browserHistory.push('/adminReferent');
     }
-
+    // this function  display a new page called adminQustion and get the ObjectId of the theme who as been choose before
     adminQuestion = () => {
         browserHistory.push('/adminQuestion/' + ThemeService.getId(this.state.theme));
     }
 
+    //this function is called with te register button at the end of the formulaire in order to update all the document modification
     handleSubmit(event) {
         ThemeService.update(this.state.theme);
         this.setState({
@@ -122,21 +132,26 @@ class AdminModifTheme extends Component {
         });
     }
 
-   /* handleQuestionsModified(nom) {
-        console.log("coucou " + nom);
-    }
-*/
+
     handleReferentModified(referent) {
-        browserHistory.push('/adminReferent/'+ ThemeService.getId(this.state.theme));
+        let referentSelected = referent._links.self.href
+        browserHistory.push('/adminReferent/');
     }
 
     handleQuestionsModified(question) {
-        browserHistory.push('/adminQuestion/'+ ThemeService.getId(this.state.theme));
+        browserHistory.push('/adminQuestion/' + ThemeService.getId(this.state.theme) + "/" + question.questionNumber);
+
     }
 
-    handleDeletedQuestion(question){
-        //ThemeService.delete(this.state.theme.question);
+    handleDeletedQuestion(questionToDelete) {
 
+        let newQuestionList = this.state.theme.questions.filter(question => question.questionNumber != questionToDelete.questionNumber)
+        let newTheme = {...this.state.theme, questions: newQuestionList}
+        this.setState({
+                theme: newTheme
+            }
+        );
+        ThemeService.update(newTheme);
     }
 
     render() {
@@ -185,10 +200,11 @@ class AdminModifTheme extends Component {
                         <CardHeader className="cardHeaderQuestionTheme">
                             Listes des questions de votre theme:
                         </CardHeader>
-                        <AdminListQuestionTheme questions={this.state.theme.questions} onQuestionModified={this.handleQuestionsModified} onDeletedQuestion={this.handleDeletedQuestion}></AdminListQuestionTheme>
+                        <AdminListQuestionTheme questions={this.state.theme.questions}
+                                                onQuestionModified={this.handleQuestionsModified}
+                                                onDeletedQuestion={this.handleDeletedQuestion}></AdminListQuestionTheme>
                         <div className="CreerQuestion">
-                            <label>Ajouter une nouvelle Question :</label>
-                            <br/>
+                            <label>Ajouter une nouvelle Question:</label>
                             <FABs type="fab"
                                   mini={true}
                                   onTouchTap={this.adminQuestion}> + </FABs>
@@ -197,14 +213,15 @@ class AdminModifTheme extends Component {
                 </div>
 
                 <div className="formCardThemeChoixReferent">
-                    <Card className="cardFormChoixReferentTheme" >
+                    <Card className="cardFormChoixReferentTheme">
                         <CardHeader className="cardHeaderThemeChoixReferent">Choisir un référent pour votre thème
                             :</CardHeader>
                         <p>Le référent selectionné apparaitra en couleur et sera affilié à votre thème</p>
                         {this.state.referents.map((referent, count) =>
 
                             <Referent active={referent.active} handler={this.handleRefresh} key={count} value={referent}
-                                      onClick={event => this.handleReferentClick(referent)} onReferentModified={this.handleReferentModified}/>,
+                                      onClick={event => this.handleReferentClick(referent)}
+                                      onReferentModified={this.handleReferentModified}/>,
                         )}
                         <div className="creerReferent">
                             <label>creer un référent :</label>

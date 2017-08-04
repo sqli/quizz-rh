@@ -95,7 +95,7 @@ class ThemeService {
 
     //fonction for create a new theme
     create(theme) {
-        Theme.save({name: theme.name, logo: theme.logo, questions:[]});
+        Theme.save({name: theme.name, logo: theme.logo, questions: []});
     }
 
     getId(theme) {
@@ -107,14 +107,6 @@ class ThemeService {
         theme.id = id;
         return theme;
     }
-
-    /*  delete(question){
-        console.log("je suis détruite")
-        return Theme.delete({
-            ici je vais créer dans ressource une méthode delete qui ne supprime pas l'id mais une data dans un id puis appeler cette methode pour ma question cliqué voir avec matthieu ...
-
-        })
-    }*/
 
     update(theme) {
         if (theme.selectedReferent) {

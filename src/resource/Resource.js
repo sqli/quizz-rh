@@ -18,7 +18,7 @@ export default class Resource {
         return data[this.idProp] ? axios.put(this.endpoint + '/' + data[this.idProp], data) : axios.post(this.endpoint, data);
     }
 
-    //mise a jour ?????
+
     update(data) {
         return axios.patch(this.cleanEndpoint(data._links.self.href), data)
     }
@@ -26,6 +26,8 @@ export default class Resource {
     delete(id) {
         return axios.delete(this.endpoint + '/' + id);
     }
+
+
 
     get(id) {
         return axios.get(this.endpoint + '/' + id)

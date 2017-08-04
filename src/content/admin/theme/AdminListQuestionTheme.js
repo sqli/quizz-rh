@@ -30,9 +30,7 @@ class AdminListQuestionTheme extends Component {
     render() {
         return (
             <div className="formCardQuestionChoixTheme">
-                <div onClick={() => { this.props.onQuestionModified("Nellie")}}>bouton</div>
-                <div onClick={this.onClickButton}>bouton 2</div>
-                {this.props.questions && this.props.questions.map((question, count) =>
+               {this.props.questions && this.props.questions.map((question, count) =>
                     <div className="cardQuestionTheme" key={count} value={question}>
                         <Card >
                             <CardTitle title={"Question n°" + question.questionNumber}/>
@@ -41,14 +39,14 @@ class AdminListQuestionTheme extends Component {
                             <FlatButton
                                 label="Modifier"
                                 primary={true}
-                                onClick={() => { this.props.onQuestionModified(this.props.question)}}
+                                onClick={() => { this.props.onQuestionModified(question)}}
                                 icon={<IconModeEdit />}
                             />
                             <FlatButton
                                 label="Supprimer"
                                 secondary={true}
                                 icon={<DeleteForever />}
-                                onClick={() => { this.props.onDeletedQuestion(this.props.question)}}
+                                onClick={() => { this.props.onDeletedQuestion(question)}}
                             />
 
                         </Card>

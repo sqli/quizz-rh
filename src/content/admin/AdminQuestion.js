@@ -13,11 +13,7 @@ import SelectField from 'material-ui/SelectField';
 import Toggle from 'material-ui/Toggle';
 import Snackbar from 'material-ui/Snackbar';
 
-const styles = {
-    customWidth: {
-        width: 150,
-    },
-};
+
 class AdminQuestion extends Component {
 
     constructor(props) {
@@ -26,7 +22,6 @@ class AdminQuestion extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handdleAddResponse = this.handdleAddResponse.bind(this);
         this.handdleAddQuestion = this.handdleAddQuestion.bind(this);
-
 
         this.state = {
 
@@ -53,9 +48,13 @@ class AdminQuestion extends Component {
         }
     }
 
+    //We get all the existing theme
     componentDidMount() {
         ThemeService.get(this.props.params.id).then(function (theme) {
             this.setState({theme: theme})
+            if (this.props.params.numQuestion) {
+                this.setState({question: theme.questions.filter(question => question.questionNumber == parseInt(this.props.params.numQuestion))[0]})
+            }
         }.bind(this));
     }
 
@@ -74,8 +73,6 @@ class AdminQuestion extends Component {
         question[key] = value;
         this.setState({question: question});
     };
-
-
 
 
     // Creer le handleAdd
@@ -99,19 +96,31 @@ class AdminQuestion extends Component {
 
 
     handleSubmit(event) {
-        let themeWithQuestion = {
-            ...this.state.theme,
-            questions: [...this.state.theme.questions, {...this.state.question}]
-        };
-        ThemeService.update(themeWithQuestion);
+        if (!this.state.theme.questions.find(question => question.questionNumber === parseInt(this.state.question.questionNumber))) {
+            //creation
+            let themeWithQuestion = {
+                ...this.state.theme,
+                questions: [...this.state.theme.questions, {...this.state.question}]
+            };
+            ThemeService.update(themeWithQuestion);
+            this.setState({
+                theme: themeWithQuestion,
+                snackbar: {
+                    open: true,
+                    message: 'La question a été crée'
+                }
+            })
+        } else {
+            ThemeService.update(this.state.theme);
+            //Modification
+            this.setState({
+                snackbar: {
+                    open: true,
+                    message: 'La question a été modifiée'
+                }
+            })
+        }
 
-        this.setState({
-            theme: themeWithQuestion,
-            snackbar: {
-                open: true,
-                message: 'La question a été créer'
-            }
-        })
 
     };
 
@@ -183,10 +192,10 @@ class AdminQuestion extends Component {
                                     floatingLabelText="Choix du niveau"
                                     value={this.state.question.level}
                                     onChange={event => this.handleQuestionChange('level', event.target.value)}
-                                    style={styles.customWidth}>
-                                    <option style={styles.customWidth}value={'debutant'} label="debutant"/>
-                                    <option style={styles.customWidth}value={'intermediaire'} label="intermediaire"/>
-                                    <option style={styles.customWidth} value={'Expérimenter'} label="Expérimenter"/>
+                                >
+                                    <option value={'Débutant'} label="debutant"/>
+                                    <option value={'Intermediaire'} label="intermediaire"/>
+                                    <option value={'Expérimenter'} label="Expérimenter"/>
                                 </SelectField>
                             </div>
                             <TextValidator
