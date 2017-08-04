@@ -12,7 +12,7 @@ build-back:
     stage: build
     image: maven:alpine
     script:
-        - cd back
+        - cd server
         - mvn compile
         
 build-front:
