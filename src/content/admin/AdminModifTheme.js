@@ -57,7 +57,7 @@ class AdminModifTheme extends Component {
 
                 //on recupere le numero de la question dans l'url et on exerce un filtre dans la mise a jour pour trouver la premiere question correspondant à ce critère
                 if (this.props.params.numQuestion) {
-                    this.setState({question: theme.questions.filter(question => question.questionNumber == this.props.params.numQuestion)[0]})
+                    this.setState({question: theme.questions.filter(question => question.questionNumber === this.props.params.numQuestion)[0]})
                 }
                 //get theme's referents
                 //if the theme clicked has got a referent this function get all the existing referent and show with a css color
@@ -134,7 +134,6 @@ class AdminModifTheme extends Component {
 
 
     handleReferentModified(referent) {
-        let referentSelected = referent._links.self.href
         browserHistory.push('/adminReferent/');
     }
 
@@ -145,7 +144,7 @@ class AdminModifTheme extends Component {
 
     handleDeletedQuestion(questionToDelete) {
 
-        let newQuestionList = this.state.theme.questions.filter(question => question.questionNumber != questionToDelete.questionNumber)
+        let newQuestionList = this.state.theme.questions.filter(question => question.questionNumber !== questionToDelete.questionNumber)
         let newTheme = {...this.state.theme, questions: newQuestionList}
         this.setState({
                 theme: newTheme

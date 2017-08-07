@@ -5,6 +5,7 @@ import React, {Component} from "react";
 import ThemeService from '../../services/ThemeService';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import {Card, CardHeader}from "material-ui/Card";
+import {browserHistory} from 'react-router';
 import FlatButton from 'material-ui/FlatButton';
 import IconDone from '../../../node_modules/material-ui/svg-icons/action/done';
 import IconAdd from '../../../node_modules/material-ui/svg-icons/content/add';
@@ -18,10 +19,13 @@ class AdminQuestion extends Component {
 
     constructor(props) {
         super(props);
+
+        //We make the binding for functions
         this.handleQuestionChange = this.handleQuestionChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handdleAddResponse = this.handdleAddResponse.bind(this);
         this.handdleAddQuestion = this.handdleAddQuestion.bind(this);
+        this.handleToggle = this.handleToggle.bind(this);
 
         this.state = {
 
@@ -53,7 +57,7 @@ class AdminQuestion extends Component {
         ThemeService.get(this.props.params.id).then(function (theme) {
             this.setState({theme: theme})
             if (this.props.params.numQuestion) {
-                this.setState({question: theme.questions.filter(question => question.questionNumber == parseInt(this.props.params.numQuestion))[0]})
+                this.setState({question: theme.questions.filter(questionrecherche => (questionrecherche.questionNumber).toString() === this.props.params.numQuestion)[0]})
             }
         }.bind(this));
     }
@@ -75,6 +79,10 @@ class AdminQuestion extends Component {
     };
 
 
+    handleToggle = (event, toggle) => {
+        this.setState({reponse:{isTrue: toggle}});
+    };
+
     // Creer le handleAdd
     handdleAddQuestion() {
         this.setState({
@@ -91,12 +99,21 @@ class AdminQuestion extends Component {
                 ...this.state.question,
                 reponses: [...this.state.question.reponses, {...this.state.reponse}]
             }
+
         });
     }
 
+    getId(theme) {
+        return ThemeService.getId(theme)
+    }
 
+    adminModifTheme =() =>{
+        browserHistory.push('adminModifTheme/' + this.getId(this.state.theme))
+    }
     handleSubmit(event) {
-        if (!this.state.theme.questions.find(question => question.questionNumber === parseInt(this.state.question.questionNumber))) {
+
+        var questionNumber = this.state.theme.questions.filter(question => question.questionNumber === (this.state.question.questionNumber))
+        if (questionNumber.length === 0) {
             //creation
             let themeWithQuestion = {
                 ...this.state.theme,
@@ -107,18 +124,40 @@ class AdminQuestion extends Component {
                 theme: themeWithQuestion,
                 snackbar: {
                     open: true,
-                    message: 'La question a été crée'
-                }
+                    message: 'La question a été crée',
+
+                },
+
             })
+            setTimeout(this.adminModifTheme, 1500);
+
         } else {
-            ThemeService.update(this.state.theme);
-            //Modification
+            //modification
+            let unmodifiedQuestionList = this.state.theme.questions.filter(question => question.questionNumber !== this.state.question.questionNumber)
+            //let newTheme = {...this.state.theme, questions: newQuestionList}
+            //this.setState({
+            //        theme: newTheme
+            //    }
+           // );
+            //ThemeService.update(newTheme);
+
+            let newTheme = {
+                ...this.state.theme,
+                questions: [...unmodifiedQuestionList, {...this.state.question}]
+            }
+
+            //Sauvegarde coté server
+            ThemeService.update(newTheme);
+
+            //Modification client
             this.setState({
+                theme: newTheme,
                 snackbar: {
                     open: true,
                     message: 'La question a été modifiée'
                 }
             })
+            setTimeout(this.adminModifTheme, 1500);
         }
 
 
@@ -127,47 +166,7 @@ class AdminQuestion extends Component {
 
     render() {
 
-        const response = [
-            <div className="formCardResponse">
-                <Card className="cardReponse">
-                    <CardHeader className="cardHeaderReponse">Réponses :</CardHeader>
-                    {this.state.question.reponses.map((reponse, count) =>
-                        <div key={count}>
-                            <Card className="cardReponseAjoute">
-                                <p>Réponse ajoutée :</p>
-                                <CardHeader>{reponse.text}</CardHeader>
-                                <CardHeader>{reponse.code}</CardHeader>
-                            </Card>
-                        </div>)}
-                    <div className="textInputResponse">
-                        <TextValidator
-                            floatingLabelText="Saisir le texte de la réponse : "
-                            name="text"
-                            type="text"
-                            fullWidth={true}
-                            value={this.state.reponse.text}
-                            onChange={event => this.handleReponseChange('text', event.target.value)}/>
-                        <TextValidator
-                            floatingLabelText="Saisir le code de la reponse : "
-                            name="code"
-                            type="text"
-                            fullWidth={true}
-                            value={this.state.reponse.code}
-                            onChange={event => this.handleReponseChange('code', event.target.value)}/>
-                        <Toggle
-                            label="Es-ce la bonne réponse?"
-                            labelPosition="right"
-                            value={this.state.reponse.isTrue}
-                        />
-                    </div>
-                    <div className="AddResponse">
-                        <FlatButton primary={true}
-                                    icon={<IconAdd/>}
-                                    onClick={this.handdleAddResponse}>Ajouter une réponse</FlatButton>
-                    </div>
-                </Card>
-            </div>
-        ];
+
 
         return (
             <ValidatorForm className="formQuestion" ref="form"
@@ -216,7 +215,50 @@ class AdminQuestion extends Component {
                                 value={this.state.question.code}
                                 onChange={event => this.handleQuestionChange('code', event.target.value)}/>
                         </div>
-                        <div>{response}</div>
+                        <div><div className="formCardResponse">
+                            <Card className="cardReponse">
+                                <CardHeader className="cardHeaderReponse">Réponses :</CardHeader>
+                                {this.state.question.reponses.map((reponse, index) =>
+                                    <div key={index}>
+                                        <Card className="cardReponseAjoute">
+                                            <p>Réponse ajoutée :</p>
+                                            <CardHeader>{reponse.text}</CardHeader>
+                                            <CardHeader>{reponse.code}</CardHeader>
+                                            <CardHeader>{reponse.isTrue?"Bonne réponse : oui ":"Bonne réponse : non"}</CardHeader>
+                                        </Card>
+                                    </div>)}
+                                <div className="textInputResponse">
+                                    <TextValidator
+                                        floatingLabelText="Saisir le texte de la réponse : "
+                                        name="text"
+                                        type="text"
+                                        fullWidth={true}
+                                        value={this.state.reponse.text}
+                                        onChange={event => this.handleReponseChange('text', event.target.value)}/>
+                                    <TextValidator
+                                        floatingLabelText="Saisir le code de la reponse : "
+                                        name="code"
+                                        type="text"
+                                        fullWidth={true}
+                                        value={this.state.reponse.code}
+                                        onChange={event => this.handleReponseChange('code', event.target.value)}/>
+                                    <Toggle
+                                        label="Es-ce la bonne réponse?"
+                                        toggled={this.state.reponse.isTrue}
+                                        onToggle={this.handleToggle}
+                                        labelPosition="right"
+                                        defaultToggled={false}
+                                        onChange={event => this.handleReponseChange('isTrue', event.target.value)}
+
+                                    />
+                                </div>
+                                <div className="AddResponse">
+                                    <FlatButton primary={true}
+                                                icon={<IconAdd/>}
+                                                onClick={this.handdleAddResponse}>Ajouter la réponse</FlatButton>
+                                </div>
+                            </Card>
+                        </div></div>
                     </Card>
                 </div>
 

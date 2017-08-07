@@ -35,10 +35,11 @@ class AdminListThemes extends Component {
                 <Card>
                     <CardHeader className="cardHeaderQuestionChoixTheme">Listes des thèmes existants :</CardHeader>
                     <span className="infoComplémentaire"><p> Clique sur un thème pour le modifier ou le compléter</p></span>
-                    {this.props.themes.map((theme, count) =>
-                        <Link to={'adminModifTheme/' + this.getId(theme)}>
-                            <Theme handler={this.handleRefresh} key={count} value={theme}
+                    {this.props.themes.map((theme, index) =>
+                        <Link key={index} to={'adminModifTheme/' + this.getId(theme)}>
+                            <Theme handler={this.handleRefresh} key={index} value={theme}
                             />
+
                         </Link>
                     )}
                 </Card>

@@ -40,13 +40,6 @@ class Theme extends Component {
                 referent: referent
             });// Chargement du referent  à partir du service REST
         }.bind(this));
-
-       /* ThemeService.getQuestions(this.theme).then(function (questions) {
-            this.theme.questions = questions._embedded.question;
-            this.setState({
-                questions: questions._embedded.question
-            });// Chargement des questions  à partir du service REST
-        }.bind(this));*/
     }
 
     handleRemove = () => {
@@ -71,6 +64,13 @@ class Theme extends Component {
         });
     };
 
+    checkReferent=()=>{
+        if(this.state.theme.referent.firstName ===''){
+            console.log("ahaha")
+
+        }
+    }
+
     render() {
 
         return (
@@ -81,9 +81,9 @@ class Theme extends Component {
                     titleStyle={{'lineHeight': '2.8em'}}
                     avatar={this.theme.logo}
                 />
-                <CardTitle title={  this.theme.questions?this.theme.questions.length + ' Questions': this.theme.questions + 'Aucune question'}/>
-                <CardHeader
-                    title="Référent SQLI : "
+                 <CardTitle title={  this.theme.questions?this.theme.questions.length + ' Questions': this.theme.questions + 'Aucune question'}/>
+                 <CardHeader
+                    title={this.theme.referent?"Référent SQLI : ": console.error("ahaha")}
                     subtitle={this.state.referent.firstName + ' ' + this.state.referent.lastName}
                     avatar={this.state.referent.avatar}
                 />
