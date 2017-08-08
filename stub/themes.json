@@ -1083,7 +1083,7 @@
     "id": 4,
     "name": "Java",
     "logo": "http://logodatabases.com/wp-content/uploads/2012/03/java-logo-large.png",
-    "referent": {
+      "referent": {
       "firstName": "Adèle",
       "lastName": "Karam",
       "avatar": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAjoAAAAJDQ3NDQ2YWY0LTUyZmEtNDM2NC04NjRlLTQwMDMyMmNmNTNlZA.jpg"

@@ -1,0 +1,88 @@
+stages:
+  - build
+  - test
+  - package
+  - deploy
+  
+cache:
+  key: "$CI_COMMIT_REF_NAME"
+  untracked: true
+  
+build-back:
+    stage: build
+    image: maven:alpine
+    script:
+        - cd server
+        - mvn compile
+        
+build-front:
+    stage: build
+    image: node:6-alpine
+    script:
+        - apk update && apk upgrade && apk add --no-cache bash git openssh
+        - npm install -g @angular/cli
+        - npm install
+        - npm run build
+
+test-back:
+    stage: test
+    image: maven:alpine
+    script:
+        - cd server
+        - mvn test
+
+back-package:
+    stage: package
+    image: maven:alpine
+    script:
+        - cd server
+        - mvn clean package -DskipTests
+    artifacts:
+        name: "${CI_BUILD_NAME}_${CI_BUILD_REF_NAME}_back"
+        paths:
+            - server/target/*.jar
+
+front-package:
+    stage: package
+    image: node:6-alpine
+    script:
+        - ls 
+    dependencies:
+        - build-front
+    artifacts:
+        name: "${CI_BUILD_NAME}_${CI_BUILD_REF_NAME}_front"
+        paths:
+            - build/*
+
+        
+deploy-front-back:
+    stage: deploy
+    image: node:6-alpine
+    script:
+        - apk update && apk upgrade
+        - 'which ssh-agent || ( apk add --no-cache openssh-client -y )'
+        - mkdir -p ~/.ssh
+        - echo "$SSH_PRIVATE_KEY" > /tmp/id_rsa
+        - chmod 0600 /tmp/id_rsa
+        - 'eval $(ssh-agent) && echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config && ssh-add /tmp/id_rsa'
+        - ssh root@172.31.31.225 'mkdir -p ~/app/front/{docker,dist}'
+        - ssh root@172.31.31.225 'mkdir -p ~/app/back/docker'
+        - scp -r front/docker/* root@172.31.31.225:~/app/front/docker/
+        - scp -r front/Dockerfile root@172.31.31.225:~/app/front/
+        - scp -r back/Dockerfile root@172.31.31.225:~/app/back/
+        - scp -r docker-compose.yml root@172.31.31.225:~/app/docker-compose.yml
+        - scp -r front/dist/* root@172.31.31.225:~/app/front/dist/
+        - scp -r back/app-web/target/app-web.jar root@172.31.31.225:~/app/back/app.jar
+        - ssh root@172.31.31.225 'cd ~/app/ && (docker build -t app-java back/ && docker build -t app-static front/)'
+        - ssh root@172.31.31.225 'cd ~/app/ && docker-compose -f ~/app/docker-compose.yml up -d'
+    dependencies:
+        - front-package
+        - back-package
+    only:
+        - master
+        - gitlab-ci-evolution
+            
+cache:
+  paths:
+    - server/.maven
+    - node_modules

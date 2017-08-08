@@ -16,7 +16,7 @@ class QuestionNavigation extends Component {
         this.questions = props.questions;
         this.state = {
             stepIndex: props.stepIndex,
-            questions: props.questions,
+           questions: props.questions,
             themes: props.themes
         };
         this.styles = {
@@ -55,25 +55,31 @@ class QuestionNavigation extends Component {
             <div className="quizz-navigation-container">
                 <div className="questions-navigation">
                     {
+                        //all themes are mapped in the quizz navigation container
                         this.state.themes.map((theme, tIndex) =>
                             <div key={tIndex} className="question-themes">
-                                <Chip className="theme-chip" key={tIndex} >
+                                <Chip className="theme-chip" key={tIndex }  >
                                     <Avatar src={theme.logo}/>{theme.name}
                                 </Chip>
                                 <div>
                                     {
+                                        // all question's themes are mapped by button in the navigation container
                                         this.state.questions.map((question, qIndex) =>
-                                            (question.theme.id === theme.id && (!this.state.questionNotAnswered || !QuestionService.isAnswered(question))
+                                            (question.theme.name === theme.name && (!this.state.questionNotAnswered || !QuestionService.isAnswered(question))
                                                     ?
-                                                        <button className={getBtnClass(question, qIndex)} key={tIndex + '_' + qIndex} onTouchTap={() => this.go(qIndex+1)}>{qIndex +1}</button>
+                                                   <button  key={tIndex + '_' + qIndex}className={getBtnClass(question, qIndex)} onTouchTap={() => this.go(qIndex+1)}>{qIndex +1}</button>
+
                                                     :
-                                                        null
+                                                    null
                                             )
+
                                         )
                                     }
                                 </div>
+
                             </div>
                         )
+
                     }
                 </div>
                 <div className="radio-button-container">

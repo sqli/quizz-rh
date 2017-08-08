@@ -1,0 +1,66 @@
+.adminModifTheme .formModifTheme {
+    display: block;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1px;
+    min-width: 48%;
+    float: left;
+    position: relative;
+
+
+}
+.adminModifTheme .formModifTheme .cardFormModifTheme
+{
+    justify-content: center;
+    display: block;
+    margin-left:20px;
+    padding-bottom: 10px;
+    margin-bottom: 1em;
+    min-width: 99%;
+    max-width: 50%;
+}
+
+.adminModifTheme .formModifTheme .cardFormModifTheme .textInputModifTheme
+{
+    width: 70%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.adminModifTheme .formModifTheme .cardFormModifTheme .submitModifTheme
+{
+    display: block;
+    width: 95px;
+    margin-top: 1em;
+}
+
+.adminModifTheme .listQuestionTheme .CardQuestionTheme{
+    display: block;
+    min-width: 50%;
+    margin-right:20px;
+    margin-left: 9px;
+    margin-top: 2em;
+    float: right;
+}
+.adminModifTheme .listQuestionTheme .CreerQuestion
+{
+    display: inline-block;
+    width: 30%;
+    margin: auto;
+    padding-bottom: 12px;
+}
+
+.adminModifTheme .formCardThemeChoixReferent{
+    margin-left: 20px;
+    min-width: 47.32%;
+    max-width: 47.32%;
+    margin-top: 10px;
+}
+
+.adminModifTheme .formCardThemeChoixReferent .cardFormChoixReferentTheme .creerReferent
+{
+    text-align: center;
+    padding-bottom: 12px;
+
+}

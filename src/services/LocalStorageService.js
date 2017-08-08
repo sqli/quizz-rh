@@ -16,6 +16,8 @@ class LocalStorageService {
         localStorage.removeItem(key);
     }
 
+
+
 }
 
 export default new LocalStorageService();

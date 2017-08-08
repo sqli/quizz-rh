@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Snackbar from 'material-ui/Snackbar';
 import {Card, CardActions, CardHeader, CardTitle} from 'material-ui/Card';
@@ -12,16 +12,34 @@ import './Theme.css';
 
 class Theme extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.theme = props.value;
         this.notifyChange = props.onChange;
+        this.handleAdd = this.handleAdd.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
         this.state = {
+            //application assincrone --> on initialise les composants
+            referent: {
+                firstName: "",
+                lastName: "",
+                avatar: ""
+            },
+           // questions: [],
             snackbar: {
                 open: false,
                 message: ''
             }
         };
+    }
+
+    //Comportement du thème au départ
+    componentDidMount() {
+        ThemeService.getReferent(this.theme).then(function (referent) {
+            this.setState({
+                referent: referent
+            });// Chargement du referent  à partir du service REST
+        }.bind(this));
     }
 
     handleRemove = () => {
@@ -46,24 +64,32 @@ class Theme extends Component {
         });
     };
 
+    checkReferent=()=>{
+        if(this.state.theme.referent.firstName ===''){
+            console.log("ahaha")
+
+        }
+    }
+
     render() {
 
         return (
-            <Card className="Theme" style={{backgroundColor: ThemeService.themeIsIntoBasket(this.theme) ? 'lightBlue': 'white'}}>
+            <Card className="Theme"
+                  style={{backgroundColor: ThemeService.themeIsIntoBasket(this.theme) ? 'lightBlue' : 'white'}}>
                 <CardHeader
                     title={this.theme.name}
                     titleStyle={{'lineHeight': '2.8em'}}
                     avatar={this.theme.logo}
-                    />
-                <CardTitle title={this.theme.questions.length + ' Questions'} />
-                <CardHeader
-                    title="Référent SQLI"
-                    subtitle={this.theme.referent.firstName + ' ' + this.theme.referent.lastName}
-                    avatar={this.theme.referent.avatar}
-                    />
+                />
+                 <CardTitle title={  this.theme.questions?this.theme.questions.length + ' Questions': this.theme.questions + 'Aucune question'}/>
+                 <CardHeader
+                    title={this.theme.referent?"Référent SQLI : ": console.error("ahaha")}
+                    subtitle={this.state.referent.firstName + ' ' + this.state.referent.lastName}
+                    avatar={this.state.referent.avatar}
+                />
                 <CardActions>
                     {
-                        ThemeService.themeIsIntoBasket(this.theme)   &&
+                        ThemeService.themeIsIntoBasket(this.theme) &&
                         <FlatButton
                             label="Enlever"
                             secondary={true}
@@ -86,7 +112,7 @@ class Theme extends Component {
                     autoHideDuration={2000}
                     onRequestClose={this.handleRequestClose}
                     className="snackBar"
-                    />
+                />
             </Card>
         );
     }

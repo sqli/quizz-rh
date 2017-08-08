@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Link } from 'react-router';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -46,13 +47,17 @@ class App extends Component {
                     />
                 </Subheader>
               <MenuItem>
-                  <Link to={'login'}>Recommencer</Link>
+                  <ul>
+                      <li><Link to={'login'}>Recommencer</Link></li>
+                      <li><Link to={'admin'}>Connexion admin</Link></li>
+                  </ul>
               </MenuItem>
             </Drawer>
             <main>
                 {this.props.children}
             </main>
           </div>
+
         </MuiThemeProvider>
     );
   }

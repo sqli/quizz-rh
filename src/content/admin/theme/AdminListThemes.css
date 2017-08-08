@@ -1,0 +1,51 @@
+.formCardQuestionChoixTheme{
+    margin-top: 2em;
+    margin-left:auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.formCardQuestionChoixTheme .infoComplémentaire p{
+    padding-left: 1.1em;
+
+
+}
+/*.formQuestion{
+    display: block;
+    margin-top:50px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width:50%;
+    max-width: 70%;
+}
+
+.formQuestion .formCardQuestion .textInputQuestion
+{
+    width: 70%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.formQuestion .formCardResponse .textInputResponse{
+    width: 70%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.formQuestion .formCardQuestionChoixTheme .Theme
+{
+    padding-bottom: 30px;
+}
+
+.formQuestion .formCardResponse .DeleteResponse{
+
+    display: block;
+    width: 70px;
+    margin-left:60px;
+    margin-top: 0px;
+}
+
+.formQuestion .formCardResponse .AddResponse{
+    display: block;
+    margin-bottom: 30px;
+}*/

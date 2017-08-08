@@ -1,0 +1,25 @@
+.OptionCard{
+    margin-top: 25px;
+}
+.OptionCard h3
+{
+   text-align: center;
+    text-decoration-line: underline;
+}
+
+.OptionCard .OptionContent
+{
+    display: block;
+    margin: auto;
+    padding:15px;
+}
+
+
+.OptionCard div .Option-Button div
+{
+
+    margin:auto;
+    width: 300px;
+    padding: 0px;
+}
+
