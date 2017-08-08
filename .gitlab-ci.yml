@@ -35,7 +35,7 @@ back-package:
     stage: package
     image: maven:alpine
     script:
-        - cd back
+        - cd server
         - mvn clean package -DskipTests
     artifacts:
         name: "${CI_BUILD_NAME}_${CI_BUILD_REF_NAME}_back"
@@ -84,5 +84,5 @@ deploy-front-back:
             
 cache:
   paths:
-    - back/.maven
-    - front/node_modules
+    - server/.maven
+    - node_modules
