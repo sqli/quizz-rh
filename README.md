@@ -10,7 +10,7 @@
     - git clone git@gitlab-toulouse.sqli.com:comite-technique/rh-quizz.git
     - cd rh-quizz
     - npm install
-    - npm install -g glup
+    - npm install -g gulp
     - npm start
 
 ## Build and deploy
