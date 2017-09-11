@@ -7,7 +7,7 @@
 - [Admin logon](client.config.prod.json)
 
 ## Getting started
-    - git clone git@gitlab-toulouse.sqli.com:comite-technique/rh-quizz.git
+    - git clone git@https://github.com/sqli/quizz-rh.git
     - cd rh-quizz
     - npm install
     - npm install -g gulp
