@@ -1,9 +1,0 @@
-com\sqli\rhquizz\entities\Referent.class
-com\sqli\rhquizz\entities\Reponse.class
-com\sqli\rhquizz\repository\QuestionRepository.class
-com\sqli\rhquizz\App.class
-com\sqli\rhquizz\entities\Question.class
-com\sqli\rhquizz\repository\ReferentRepository.class
-com\sqli\rhquizz\entities\Theme.class
-com\sqli\rhquizz\repository\ThemeRepository.class
-com\sqli\rhquizz\Controller\ThemeController.class
